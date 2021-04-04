@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= title
+
+    script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-156555035-1')
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-156555035-1');
+    style.
+      img{
+        width: 1280px;
+      }
+    meta(charset='UTF-8')
+body
+  div.img
+    img.imgImage(src="/error.png")

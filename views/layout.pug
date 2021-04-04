@@ -1,0 +1,15 @@
+html
+	head
+		title = title
+		script(src="//code.jquery.com/jquery-3.3.1.js")
+		script(type='text/javascript').
+			$(document).ready(function(){
+				$('.loading').hide();
+				$('.popup_exit').on('click', function(){
+					$('.center_popup').hide();
+				});
+			});
+		link(rel='stylesheet', type='text/css', href='/style/bg_style.css')
+		link(rel='stylesheet', type='text/css', href='/style/popup_style.css')
+		link(rel='stylesheet', href='//cdn.jsdelivr.net/gh/Dalgona/neodgm-webfont@1.520/neodgm_code/style.css')
+block content

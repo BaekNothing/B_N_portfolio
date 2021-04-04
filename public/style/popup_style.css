@@ -1,0 +1,86 @@
+:root{
+		--center: 480px;
+}
+
+.center_popup{
+	pointer-events: auto;
+  background-color: rgba(0,0,0,0);
+
+	z-index : 2;
+	position: absolute;
+	top: 0px;
+  width: var(--center);
+  height: 100%;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	overflow: hidden;
+}
+.popup_exit{
+	background-color : red;
+	position: absolute;
+	z-index : 2;
+	right: 0px;
+	top: 10%;
+	border-radius: 15px;
+	width: 40px;
+	height: 40px;
+}
+
+.popup_contents{
+	background-color : white;
+	width: 480px;
+	height: 80%;
+	border-radius : 20px;
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	padding: 0px;
+	overflow-y: scroll;
+	-ms-overflow-style: none;
+}
+.popup_contents::-webkit-scrollbar{
+	display:none;
+}
+
+.contents_title{
+	font-size : 38px;
+	margin: 16px;
+	margin-bottom : 20px;
+	line-height : 42px;
+}
+
+.contents_subtitle{
+	font-size: 12px;
+	margin: 16px;
+	margin-top : 32px;
+	line-height : 12px;
+}
+.contents_date{
+	margin: 16px;
+	margin-right : 36px;
+	text-align: right;
+}
+.contents_text{
+	margin : 32px;
+	margin-top : 0px;
+	text-align : left;
+	line-height : 24px;
+}
+
+.popup_frame{
+	pointer-events: none;
+	border-image: url('/resource/imgs/dotsframe.png') round;
+	border-image-slice: calc(50 / 184 * 100%) calc(80 / 284 * 100%) fill;
+	border-image-width: 30px 48px;
+
+	width: 480px;
+	height: 80%;
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+.contents_img{
+	width: 100%;
+	height: auto;
+}

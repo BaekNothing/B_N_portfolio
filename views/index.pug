@@ -1,0 +1,37 @@
+extend layout.pug
+
+block content
+	nav.topbar
+	body
+		nav.topbar
+		div.loading
+			img.loading-image(src="resource/imgs/rocket.gif", alt="loading")
+		div.background
+			div.folders
+				div.folder
+					img.icon(src="resource/imgs/folders.png", alt="folder_icon")
+					a(href="") href
+					p Unity
+				div.folder
+					img.icon(src="resource/imgs/folders.png", alt="folder_icon")
+					p UX/UI Design
+				div.folder
+					img.icon(src="resource/imgs/folders.png", alt="folder_icon")
+					p Web
+			div.trash
+				img.icon(src="resource/imgs/folders.png", alt="trash_icon")
+				p legacy
+		div.center_popup
+			div.popup_exit
+			div.popup_contents
+				p.contents_subtitle 콕 찍어서 쉽게 남기는 소소한 일상 속 컴플레인
+				p.contents_title Complapins
+				image.contents_img(src="resource/imgs/tempCat.jpg", alt="contents_img")
+				image.contents_img(src="resource/imgs/tempCat.jpg", alt="contents_img")
+				image.contents_img(src="resource/imgs/tempCat.jpg", alt="contents_img")
+				p.contents_date 2020.12.31.Wed
+				p.contents_text Neo둥근모를 바탕으로 만들어진 Neo둥근모 Pro 글꼴은 각각의 글자에 어울리는 글자 폭과, 상황에 따라 글자 사이의 간격을 보기 좋게 조정하는 커닝(Kerning) 기능이 적용된 가변폭 글꼴입니다.
+			div.popup_frame
+		div.folder_popup
+	footer
+		div.copyright
