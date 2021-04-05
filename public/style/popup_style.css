@@ -26,6 +26,11 @@
 	height: 40px;
 }
 
+#ajaxbutton{
+	width: 100%;
+	height: 100%;
+}
+
 .popup_contents{
 	background-color : white;
 	width: 480px;

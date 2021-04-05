@@ -17,5 +17,8 @@
     "npm-check-install": "^0.0.4",
     "pug": "^3.0.2",
     "stylus": "0.54.5"
+  },
+  "devDependencies": {
+    "mocha-jsdom": "^2.0.0"
   }
 }

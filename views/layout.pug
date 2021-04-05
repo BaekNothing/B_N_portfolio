@@ -2,14 +2,11 @@ html
 	head
 		title = title
 		script(src="//code.jquery.com/jquery-3.3.1.js")
-		script(type='text/javascript').
-			$(document).ready(function(){
-				$('.loading').hide();
-				$('.popup_exit').on('click', function(){
-					$('.center_popup').hide();
-				});
-			});
+		script(type='text/javascript', src="/javascripts/scripts.js")
+		
 		link(rel='stylesheet', type='text/css', href='/style/bg_style.css')
 		link(rel='stylesheet', type='text/css', href='/style/popup_style.css')
 		link(rel='stylesheet', href='//cdn.jsdelivr.net/gh/Dalgona/neodgm-webfont@1.520/neodgm_code/style.css')
+		link(rel="shortcut icon", href="resource/favicon.ico", type="image/x-icon")
+		link(rel="icon", href="resource/favicon.ico", type="image/x-icon")
 block content
