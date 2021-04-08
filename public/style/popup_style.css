@@ -32,7 +32,7 @@
 
 .popup_contents{
 	background-color : white;
-	width: 480px;
+	width: var(--center);
 	height: 80%;
 	border-radius : 20px;
 	position: absolute;
@@ -77,7 +77,7 @@
 	border-image-slice: calc(50 / 184 * 100%) calc(80 / 284 * 100%) fill;
 	border-image-width: 30px 48px;
 
-	width: 480px;
+	width: var(--center);
 	height: 80%;
 	position: absolute;
 	top: 50%;
