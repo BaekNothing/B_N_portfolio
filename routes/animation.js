@@ -14,4 +14,6 @@ router.post('/', function(req, res, next) {
   }catch(error){ console.log('notend'); }
 });
 
+//Intervalfunction을 가리키는 변수는 "anime"만 사용할 것
+
 module.exports = router;

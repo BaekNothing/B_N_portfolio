@@ -6,7 +6,7 @@ window.onload = function(){
     $('.touchblock').hide();
 
     loadanime();
-
+    /* Dance */
     var plaied = 0;
     $('.music').on('click', function(){
       console.log($('.bgm').paused);
@@ -45,17 +45,20 @@ window.onload = function(){
         $('.dance').css({"background-image": "url('../resource/imgs/dance_pause.png')"})
       }
     });
-
-    $('.animation_exit').on('click', function(){
+    /* Anime */
+    $('.animation, .animation_exit').on('click', function(){
       if($('.center_animation').is(':visible')){
           $('.center_animation').hide(100);
+          $('.animation').css({'background-image': 'url("../resource/imgs/animation.png")'});
+          window.clearInterval(anime);
       }
       else{
         $('.center_animation').show(100);
         loadanime();
+        $('.animation').css({'background-image': 'url("../resource/imgs/animation_after.png")'});
       }
     });
-
+    /* Popup */
     $('.popup_exit').on('click', function(){
       $('.center_popup').hide(100);
       $('.file').css({'background-image': 'url("../resource/imgs/top_files.png")', 'background-color':'white'});
@@ -135,6 +138,7 @@ window.onload = function(){
   };
 
   loadanime = function(){
+    $('.animation').css({'background-image': 'url("../resource/imgs/animation_after.png")'});
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/animation');
     xhr.setRequestHeader('Content-type', "application/json");
