@@ -12,7 +12,7 @@ window.onload = function(){
           $('.bgm').trigger("pause");
           $('.music').css({"background-image": 'url("../resource/imgs/music_play.png")'});
           $('.dance').css({"background-image": "url('../resource/imgs/dance_play.png')"});
-          $('.icon').css({"animation-iteration-count": "1"});
+          $('.icon').css({"animation-iteration-count": "0"});
           plaied = 0;
       } else {
           $('.bgm').trigger("play");
@@ -31,7 +31,7 @@ window.onload = function(){
       if( $('.icon').css("animation-iteration-count") == "infinite")
       {
         $('.dance').css({"background-image": "url('../resource/imgs/dance_play.png')"});
-        $('.icon').css({"animation-iteration-count": "1"});
+        $('.icon').css({"animation-iteration-count": "0"});
       }
       else
       {
