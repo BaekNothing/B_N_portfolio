@@ -5,6 +5,8 @@ window.onload = function(){
     $('.center_popup').hide();
     $('.touchblock').hide();
 
+    loadanime();
+
     var plaied = 0;
     $('.music').on('click', function(){
       console.log($('.bgm').paused);
@@ -41,6 +43,16 @@ window.onload = function(){
         });
         $('.icon').css({"animation-play-state": "running", "animation-iteration-count": "infinite"});
         $('.dance').css({"background-image": "url('../resource/imgs/dance_pause.png')"})
+      }
+    });
+
+    $('.animation_exit').on('click', function(){
+      if($('.center_animation').is(':visible')){
+          $('.center_animation').hide(100);
+      }
+      else{
+        $('.center_animation').show(100);
+        loadanime();
       }
     });
 
@@ -120,6 +132,15 @@ window.onload = function(){
     xhr.addEventListener('load', function(result){
       $(".popup_contents").html(xhr.responseText);
     });
-  }
+  };
 
+  loadanime = function(){
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/animation');
+    xhr.setRequestHeader('Content-type', "application/json");
+    xhr.send('');
+    xhr.addEventListener('load', function(result){
+      $(".animation_contents").html(xhr.responseText);
+    });
+  };
 }

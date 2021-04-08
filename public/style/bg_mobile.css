@@ -6,7 +6,7 @@
   	--icon-size: 90px;
   	--icon-font-size : 32px;
   	--icon-padding-RL: 60px;
-    --center: 100%;
+    --center: 95%;
   }
 
   .file{
@@ -24,13 +24,17 @@
     right: 20px;
   }
 
+  .music{
+    right: 70px;
+  }
+
   .center_animation{
     width: 0px;
     height: 0px;
   }
 
-  .music{
-    right: 70px;
+  .folder{
+    margin-bottom : 60px;
   }
 
   .infocard{

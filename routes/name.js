@@ -2,34 +2,7 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  var dirSrc = './public/resource/';
-  try{
-  fs.readdir(dirSrc + 'unity', function(error, unitylist){
-    console.log(unitylist);
-    fs.readdir(dirSrc + 'design', function(error,designlist){
-      console.log(designlist);
-      fs.readdir(dirSrc + 'web', function(error,weblist){
-        console.log(weblist);
-        res.render('index', {
-          title: 'Baeknothing_portfolio',
-          unitycount: unitylist.length,
-          unitylist: unitylist,
-
-          designcount: designlist.length,
-          designlist: designlist,
-
-          webcount: weblist.length,
-          weblist: weblist
-        });
-      });
-    });
-  });}catch(error){console.log(error);}
-});
-
-/*
-router.post('/name', function(req, res, next) {
+router.post('/', function(req, res, next) {
   var dirSrc = './public/resource/'+ req.body.category + '/' + req.body.name;
   console.log(dirSrc);
   var imgcount = 0;
@@ -63,5 +36,5 @@ router.post('/name', function(req, res, next) {
     });
   });}catch(error){ console.log('notend'); }
 });
-*/
+
 module.exports = router;

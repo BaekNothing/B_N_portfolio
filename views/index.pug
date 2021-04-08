@@ -2,7 +2,8 @@ extend layout.pug
 
 block content
 	nav.topbar
-		div.home
+		a(href="/")
+			div.home
 		div.barmiddle
 			div.edit
 			div.file
@@ -14,6 +15,18 @@ block content
 		div.loading
 			img.loading-image(src="resource/imgs/rocket.gif", alt="loading")
 		div.background
+			div.center_animation
+				div.animation_frame
+				div.animation_contents
+				div.animation_exit
+			div#complapins.trash
+				img.icon(src="resource/imgs/folders.png", alt="trash_icon")
+				p legacy
+			div.infocard
+				p.infotext ID: BAEK_NOTHING
+				p.infotext(style="font-family : Gilbeot_TG") "Still looking for a job"
+				p.infotext
+					| UX/UI Designer <br> Product Manager <br> Unity/web Developer
 			div.folders
 				div#unity.folder
 					img#unity.icon(src="resource/imgs/folders.png", alt="folder_icon")
@@ -24,14 +37,6 @@ block content
 				div#design.folder
 					img#design.icon(src="resource/imgs/folders.png", alt="folder_icon")
 					p#design UX/UI Design
-			div#complapins.trash
-				img.icon(src="resource/imgs/folders.png", alt="trash_icon")
-				p legacy
-			div.infocard
-				p.infotext ID: BAEK_NOTHING
-				p.infotext(style="font-family : Gilbeot_TG") "Still looking for a job"
-				p.infotext
-					| UX/UI Designer <br> Product Manager <br> Unity/web Developer
 		div.touchblock
 		div.folder_popup
 			div.folder_exit
