@@ -1,14 +1,10 @@
 :root{
-	--debug-bg-color: lightblue;
-	--debug-bar-color: #EAEAEA;
-	--debug-icon-color : #DDDDDD;
 	--icon-size: 90px;
 	--icon-font-size : 32px;
 	--icon-padding-RL: 80px;
 }
 
 *{
-	font-family: 'NeoDunggeunmo Code';
 	font-family: 'Gilbeot';
 	margin: 0;
 	padding: 0;
