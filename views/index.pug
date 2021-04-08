@@ -2,37 +2,71 @@ extend layout.pug
 
 block content
 	nav.topbar
+		div.home
+		div.barmiddle
+			div.edit
+			div.file
+		div.music
+			audio.bgm
+				source(src="resource/audio/on-the-up-and-up.mp3")
+		div.dance
 	body
-		nav.topbar
 		div.loading
 			img.loading-image(src="resource/imgs/rocket.gif", alt="loading")
 		div.background
 			div.folders
-				div.folder
-					img.icon(src="resource/imgs/folders.png", alt="folder_icon")
-					a(href="") href
-					p Unity
-				div.folder
-					img.icon(src="resource/imgs/folders.png", alt="folder_icon")
-					p UX/UI Design
-				div.folder
-					img.icon(src="resource/imgs/folders.png", alt="folder_icon")
-					p Web
-			div.trash
+				div#unity.folder
+					img#unity.icon(src="resource/imgs/folders.png", alt="folder_icon")
+					p#unity Unity
+				div#web.folder
+					img#web.icon(src="resource/imgs/folders.png", alt="folder_icon")
+					p#web Web
+				div#design.folder
+					img#design.icon(src="resource/imgs/folders.png", alt="folder_icon")
+					p#design UX/UI Design
+			div#complapins.trash
 				img.icon(src="resource/imgs/folders.png", alt="trash_icon")
 				p legacy
+			div.infocard
+				p.infotext ID: BAEK_NOTHING
+				p.infotext(style="font-family : Gilbeot_TG") "Still looking for a job"
+				p.infotext
+					| UX/UI Designer <br> Product Manager <br> Unity/web Developer
+		div.touchblock
+		div.folder_popup
+			div.folder_exit
+			div.folder_contents
+				- if (unitycount != 0)
+					div#folder_unity.folder_mid
+						- for (var i = 0; i < unitycount; i++)
+							div(id=unitylist[i], class = "folder_content")
+								img.icon(src="resource/imgs/folders.png", alt="folder_icon")
+								div.folder_content_mid_p
+									p(id=unitylist[i], class = "folder_content_p")=unitylist[i]
+				- else
+						img#folder_unity.folder_empty(src="resource/imgs/empty.png", alt="empty_icon")
+				- if (designcount != 0)
+					div#folder_design.folder_mid
+						- for (var i = 0; i < designcount; i++)
+							div(id=designlist[i], class = "folder_content")
+								img.icon(src="resource/imgs/folders.png", alt="folder_icon")
+								div.folder_content_mid_p
+									p(id=designlist[i], class = "folder_content_p")=designlist[i]
+				- else
+					img#folder_design.folder_empty(src="resource/imgs/empty.png", alt="empty_icon")
+				- if (webcount != 0)
+					div#folder_web.folder_mid
+						- for (var i = 0; i < webcount; i++)
+							div(id=weblist[i], class = "folder_content")
+								img.icon(src="resource/imgs/folders.png", alt="folder_icon")
+								div.folder_content_mid_p
+									p(id=weblist[i], class = "folder_content_p")=weblist[i]
+				- else
+					img#folder_web.folder_empty(src="resource/imgs/empty.png", alt="empty_icon")
+			div.folder_frame
 		div.center_popup
 			div.popup_exit
-				button#ajaxbutton.complapins
 			div.popup_contents
-				p.contents_subtitle 콕 찍어서 쉽게 남기는 소소한 일상 속 컴플레인
-				p.contents_title Complapins
-				image.contents_img(src="resource/imgs/tempCat.jpg", alt="contents_img")
-				image.contents_img(src="resource/imgs/tempCat.jpg", alt="contents_img")
-				image.contents_img(src="resource/imgs/tempCat.jpg", alt="contents_img")
-				p.contents_date 2020.12.31.Wed
-				p.contents_text Neo둥근모를 바탕으로 만들어진 Neo둥근모 Pro 글꼴은 각각의 글자에 어울리는 글자 폭과, 상황에 따라 글자 사이의 간격을 보기 좋게 조정하는 커닝(Kerning) 기능이 적용된 가변폭 글꼴입니다.
 			div.popup_frame
-		div.folder_popup
 	footer
 		div.copyright

@@ -4,22 +4,45 @@ var fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Baeknothing_portfolio' });
+  var dirSrc = './public/resource/';
+  try{
+  fs.readdir(dirSrc + 'unity', function(error, unitylist){
+    console.log(unitylist);
+    fs.readdir(dirSrc + 'design', function(error,designlist){
+      console.log(designlist);
+      fs.readdir(dirSrc + 'web', function(error,weblist){
+        console.log(weblist);
+        res.render('index', {
+          title: 'Baeknothing_portfolio',
+          unitycount: unitylist.length,
+          unitylist: unitylist,
+
+          designcount: designlist.length,
+          designlist: designlist,
+
+          webcount: weblist.length,
+          weblist: weblist
+        });
+      });
+    });
+  });}catch(error){console.log(error);}
 });
 
+
 router.post('/name', function(req, res, next) {
-  var dirSrc = './public/resource/' + req.body.name;
+  var dirSrc = './public/resource/'+ req.body.category + '/' + req.body.name;
+  console.log(dirSrc);
   var imgcount = 0;
   var movcount = 0;
   var movurllist = 0;
   var unitycount = 0;
   var unityurllist = 0;
 
+  try{
   fs.readdir(dirSrc+'/img', function(error, imglist){
     imgcount = imglist.length;
     fs.readdir(dirSrc+'/mov', function(error, movlist){
       movcount = movlist.length;
-      //length랑 list의 갯수가 안맍는 문제가 있음 >2개부터 error
       try{
         movurllist = fs.readFileSync(dirSrc+'/mov/list.txt', 'utf-8').split('\n');
         console.log(movurllist);
@@ -38,7 +61,7 @@ router.post('/name', function(req, res, next) {
         });
       });
     });
-  });
+  });}catch(error){ console.log('notend'); }
 });
 
 module.exports = router;
