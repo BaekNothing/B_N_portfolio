@@ -82,6 +82,8 @@
 	position: absolute;
 	top: 50%;
 	transform: translate(0, -50%);
+
+	filter: drop-shadow(4px 4px 6px #dddddd);
 }
 
 .contents_img{

@@ -5,7 +5,7 @@
   :root{
   	--icon-size: 90px;
   	--icon-font-size : 32px;
-  	--icon-padding-RL: 60px;
+  	--icon-padding-RL: 56px;
     --center: 95%;
   }
 
@@ -47,7 +47,7 @@
   }
 
   .infotext{
-  	margin-left: 10px;
+  	margin-left: -20px;
   	font-family: "Gilbeot";
   	font-size: 18px;
   	text-align: left;

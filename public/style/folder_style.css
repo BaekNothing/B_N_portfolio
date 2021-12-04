@@ -92,6 +92,8 @@
 	top: 50%;
 	left:50%;
 	transform: translate(-50%, -50%);
+
+	filter: drop-shadow(4px 4px 6px #dddddd);
 }
 
 .folder_empty{
