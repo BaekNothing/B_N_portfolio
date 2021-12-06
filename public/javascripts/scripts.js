@@ -61,23 +61,21 @@ window.onload = function(){
     /* Popup */
     $('.popup_exit').on('click', function(){
       $('.center_popup').hide(100);
-      $('.file').css({'background-image': 'url("../resource/imgs/top_files.png")', 'background-color':'white'});
-      if($('.folder_popup').is(':visible')){
-        $('.edit').css({'background-image': 'url("../resource/imgs/top_folders_after.png")', 'background-color':'#FF4D4D'});
+      if(!$('.folder_popup').is(':visible')){
+        $('.touchblock').hide();
       }
-      else{ $('.touchblock').hide(); }
       ajaxcontent('name', 'welcome', 'welcome');
     });
+
     $('.folder_exit').on('click', function(){
       $('.folder_popup').hide(100);
       $('.touchblock').hide();
-      $('.edit').css({'background-image': 'url("../resource/imgs/top_folders.png")', 'background-color':'white'});
     });
 
     $('.folder').on('click', function(){
       $('.folder_popup').show(100);
       $('.touchblock').show();
-      $('.edit').css({'background-image': 'url("../resource/imgs/top_folders_after.png")', 'background-color':'#FF4D4D'});
+
       var name = event.target.id;
       console.log(name);
       $('#folder_unity').hide();
@@ -86,40 +84,17 @@ window.onload = function(){
       $('#folder_'+name).show();
     });
 
-    $('.edit').on('click', function(){
-      $('.folder_popup').show(100);
-      $('.touchblock').show();
-      $('.edit').css({'background-image': 'url("../resource/imgs/top_folders_after.png")', 'background-color':'#FF4D4D'});
-      $('#folder_unity').hide();
-      $('#folder_design').hide();
-      $('#folder_web').hide();
-      var random = Math.floor(Math.random() * 3);
-      console.log(random);
-      if(random == 0) {$('#folder_unity').show(); }
-      else if(random == 1) {$('#folder_design').show(); }
-      else if(random == 2) {$('#folder_web').show(); }
-    });
-
     $('.folder_content').on('click', function(){
       $('.center_popup').show(100);
       $('.touchblock').show();
-      $('.file').css({'background-image': 'url("../resource/imgs/top_files_after.png")', 'background-color':'#FF4D4D'});
-      $('.edit').css({'background-image': 'url("../resource/imgs/top_folders.png")', 'background-color':'white'});
       var name = event.target.id;
       if($('#folder_unity').is(':visible')){ ajaxcontent('name', name, 'unity'); }
       else if($('#folder_design').is(':visible')){ ajaxcontent('name', name, 'design'); }
       else if($('#folder_web').is(':visible')){ ajaxcontent('name', name, 'web'); }
       else{ ajaxcontent('name', name, 'welcome'); }
     });
-
-    $('.file').on('click', function(){
-      $('.center_popup').show(100);
-      $('.touchblock').show();
-      $('.file').css({'background-image': 'url("../resource/imgs/top_files_after.png")','background-color':'#FF4D4D'});
-      $('.edit').css({'background-image': 'url("../resource/imgs/top_folders.png")','background-color':'white'});
-      var name = 'welcome';
-      console.log(name);
-      ajaxcontent('name', name,'welcome');
+    $('.contents_img').on('click', function(){
+      console.log("imgclicked");
     });
   });
 

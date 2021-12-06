@@ -59,6 +59,12 @@
 	margin-top : 60px;
 	line-height : 12px;
 }
+
+.contents_textArea{
+	margin-bottom: 50px;
+	height:auto;
+}
+
 .contents_date{
 	margin: 16px;
 	margin-right : 36px;
@@ -67,6 +73,7 @@
 .contents_text{
 	margin : 32px;
 	margin-top : 0px;
+	margin-bottom : 0px;
 	text-align : left;
 	line-height : 24px;
 }

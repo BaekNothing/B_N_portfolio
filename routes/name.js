@@ -10,6 +10,8 @@ router.post('/', function(req, res, next) {
   var movurllist = 0;
   var unitycount = 0;
   var unityurllist = 0;
+  var texts = 0;
+  var textcount = 0;
 
   try{
   fs.readdir(dirSrc+'/img', function(error, imglist){
@@ -22,6 +24,11 @@ router.post('/', function(req, res, next) {
       }catch(error){ console.log('mov not exit'); }
       fs.readdir(dirSrc+'/unity', function(error, unitylist){
         unitycount = unitylist.length;
+        try{
+        texts = fs.readFileSync(dirSrc+'/main.txt', 'utf-8').split('\n');
+        textcount = texts.length;
+      }catch(error){ console.log('txt not exit'); }
+
         res.render('contents', {
             content_title: req.body.name,
             content_subtitle: 'subtitle',
@@ -29,8 +36,8 @@ router.post('/', function(req, res, next) {
             content_movs: movcount,
             content_movurls : movurllist,
             content_unitys: unitycount,
-            content_dates: '2021.04.05.Mon',
-            content_texts: 'texts'
+            content_maintext: texts,
+            content_texts: textcount
         });
       });
     });
