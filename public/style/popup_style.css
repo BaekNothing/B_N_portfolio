@@ -79,6 +79,11 @@
 	line-height : 24px;
 }
 
+#content_load{
+	width: 100%;
+	height: 100%;
+}
+
 .popup_frame{
 	pointer-events: none;
 	border-image: url('/resource/imgs/dotsframe.png') round;
@@ -95,7 +100,87 @@
 }
 
 .contents_img{
+	cursor: zoom-in;
+	width: 100%;
+	height: auto;
+}
+
+.contents_mov{
 	cursor: pointer;
 	width: 100%;
 	height: auto;
+}
+
+.zoom_img{
+	pointer-events: auto;
+  background-color: rgba(0,0,0,0);
+
+	z-index : 3;
+	position: absolute;
+	top: 0px;
+  width: 80%;
+  height: 100%;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	overflow: hidden;
+}
+
+.zoom_contents{
+	background-color : white;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	width: 100%;
+	height: 80%;
+	border-radius : 20px;
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	padding: 0px;
+	overflow-y: scroll;
+	-ms-overflow-style: none;
+}
+
+.zoom_exit{
+	cursor: pointer;
+	position: absolute;
+	z-index : 2;
+	right: 0px;
+	top: 10%;
+	border-radius: 15px;
+	width: 40px;
+	height: 40px;
+}
+
+.zoom_frame{
+	pointer-events: none;
+	border-image: url('/resource/imgs/dotsframe.png') round;
+	border-image-slice: calc(50 / 184 * 100%) calc(80 / 284 * 100%) fill;
+	border-image-width: 30px 48px;
+
+	width: 100%;
+	height: 80%;
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+.zoom_prev{
+	position: absolute;
+	top: 45%;
+	left: 30px;
+	font-size: 120px;
+	opacity: 80%;
+}
+.zoom_next{
+	position: absolute;
+	top: 45%;
+	right: 30px;
+	font-size: 120px;
+	opacity: 80%;
+}
+.zoom_title{
+	position: absolute;
+	top: 40px;
+	left: 30px;
 }
