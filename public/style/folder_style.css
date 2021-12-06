@@ -19,6 +19,7 @@
 	overflow: hidden;
 }
 .folder_exit{
+	cursor: pointer;
 	position: absolute;
 	z-index : 3;
 	right: 5%;
@@ -60,6 +61,7 @@
 }
 
 .folder_content{
+	cursor: pointer;
 	display: inline-block;
 	margin: 30px;
 	width: var(--folder-icon-size);

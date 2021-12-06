@@ -59,6 +59,7 @@
 
 
 .home{
+	cursor: pointer;
 	z-index: 3;
 	display: block;
 	background-image: url("../resource/imgs/home.png");
@@ -72,6 +73,7 @@
 	height: 50px;
 }
 .dance{
+	cursor: pointer;
 	z-index: 3;
 	display: block;
 	background-image: url("../resource/imgs/dance_play.png");
@@ -86,6 +88,7 @@
 }
 
 .music{
+	cursor: pointer;
 	z-index: 3;
 	display: block;
 	background-image: url("../resource/imgs/music_play.png");
@@ -100,6 +103,7 @@
 }
 
 .animation{
+	cursor: pointer;
 	z-index: 3;
 	display: inline-block;
 	background-image: url("../resource/imgs/animation.png");
@@ -113,7 +117,7 @@
 }
 
 .loading {
-	width: 100%;
+	width: 90%;
 	height: 100%;
 	top: 0px;
 	left: 0px;
@@ -187,6 +191,7 @@
 }
 
 .animation_exit{
+	cursor: pointer;
 	position: absolute;
 	z-index : 2;
 	right: 0px;
@@ -208,6 +213,7 @@
 }
 
 .folder{
+	cursor: pointer;
 	margin-bottom : 70px;
 	width: var(--icon-size);
 	height: var(--icon-size);
@@ -216,6 +222,7 @@
 }
 
 .trash{
+	cursor: pointer;
 	position : absolute;
 	top : 100px;
 	left : var(--icon-padding-RL);

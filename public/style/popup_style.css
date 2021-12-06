@@ -16,6 +16,7 @@
 	overflow: hidden;
 }
 .popup_exit{
+	cursor: pointer;
 	position: absolute;
 	z-index : 2;
 	right: 0px;
@@ -94,6 +95,7 @@
 }
 
 .contents_img{
+	cursor: pointer;
 	width: 100%;
 	height: auto;
 }
