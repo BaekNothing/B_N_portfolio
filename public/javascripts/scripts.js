@@ -80,6 +80,10 @@ window.onload = function(){
         $('.animation').css({'background-image': 'url("../resource/imgs/animation_after.png")'});
       }
     });
+    $('.animation_random').on('click', function(){
+        window.clearInterval(anime);
+        loadanime();
+    });
 
     /* Popup */
     $('.popup_exit').on('click', function(){

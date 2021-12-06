@@ -165,8 +165,8 @@
 .center_animation{
 	background-color: #FFFF;
 	border-radius: 10px;
-	width: 300px;
-	height: 300px;
+	width: 400px;
+	height: 400px;
 	position: absolute;
 	left: 50%;
 	top: 45%;
@@ -186,8 +186,8 @@
 	border-image-slice: calc(50 / 184 * 100%) calc(80 / 284 * 100%) fill;
 	border-image-width: 30px 48px;
 
-	width: 300px;
-	height: 300px;
+	width: 400px;
+	height: 400px;
 	position: absolute;
 	top: 50%;
 	transform: translate(0, -50%);
@@ -204,6 +204,17 @@
 	border-radius: 15px;
 	width: 40px;
 	height: 40px;
+}
+
+.animation_random{
+	background-image: url('/resource/imgs/rocket.gif');
+	background-size: contain;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+
+	bottom: 20px;
+	right: 20px;
 }
 
 .folders{
