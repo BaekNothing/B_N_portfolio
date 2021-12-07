@@ -167,16 +167,16 @@
 
 .zoom_prev{
 	position: absolute;
-	top: 45%;
+	top: 48%;
 	left: 30px;
-	font-size: 120px;
+	font-size: 80px;
 	opacity: 80%;
 }
 .zoom_next{
 	position: absolute;
-	top: 45%;
+	top: 48%;
 	right: 30px;
-	font-size: 120px;
+	font-size: 80px;
 	opacity: 80%;
 }
 .zoom_title{
