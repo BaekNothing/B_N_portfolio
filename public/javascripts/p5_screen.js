@@ -41,7 +41,7 @@ let sketch = function(p) {
         p.mouseX,
         p.mouseY,
         parseInt(Math.random() * 14) -7,
-        -20
+        -15
       );
       counter++;
       if(counter > 20){
@@ -70,7 +70,7 @@ class p_Object{
     this.ypos = ypos;
     this.xVector = xVector;
     this.yForce = yForce;
-    this.gravity = 2;
+    this.gravity = 1;
     this.degree = 0;
     this.rotationForce = parseInt(Math.random() * 10) + 10;
   }
