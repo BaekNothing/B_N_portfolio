@@ -14,7 +14,7 @@ let sketch = function(p) {
     p.resizeCanvas(parseInt($('.background').css('width')), parseInt($('.background').css('height')));
   }
   p.draw = function(){
-    p.background(255);
+    p.clear();
     for (var i = 0; i < counter; i++)
     {
       p.push()
@@ -37,20 +37,24 @@ let sketch = function(p) {
   p.mouseClicked = function(){
     if(window.innerHeight - 80 > p.mouseY && p.mouseY > 60 && touchblock === 'invisible' && !$('.touchblock').is(':visible')){
       objects[counter] = new p_Object(
-        p.loadImage("resource/processing/"+ parseInt(Math.random() * 6 + 1) +".png"),
+        p.loadImage("resource/processing/"+ parseInt(Math.random() * 7 + 1) +".png"),
         p.mouseX,
         p.mouseY,
         parseInt(Math.random() * 14) -7,
-        -15
+        -20
       );
       counter++;
+      if(counter > 20){
+        objects.shift();
+        counter--;
+      }
     }
   }
 
   p.keyPressed = function(){
     if(p.key === 'Escape')
     {
-      p.background(255);
+      p.clear();
       for (let i = objects.length; i > 0; i--)
         objects.pop();
       counter = 0;
@@ -66,7 +70,7 @@ class p_Object{
     this.ypos = ypos;
     this.xVector = xVector;
     this.yForce = yForce;
-    this.gravity = 1;
+    this.gravity = 2;
     this.degree = 0;
     this.rotationForce = parseInt(Math.random() * 10) + 10;
   }
