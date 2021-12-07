@@ -26,8 +26,9 @@ window.onload = function(){
         }
       }
     });
-
-    loadanime();
+    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+    if(!isMobile)
+      loadanime();
     /* Dance */
     var plaied = 0;
     $('.music').on('click', function(){
