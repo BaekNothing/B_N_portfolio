@@ -5,10 +5,13 @@ let sketch = function(p) {
   let counter = 0;
 
   p.setup = function(){
-    p.createCanvas(window.screen.width, window.screen.height);
+    p.createCanvas(parseInt($('.background').css('width')), parseInt($('.background').css('height')));
     p.background(255);
     p.fill(0);
     p.imageMode(p.CENTER);
+  }
+  p.windowResized = function() {
+    p.resizeCanvas(parseInt($('.background').css('width')), parseInt($('.background').css('height')));
   }
   p.draw = function(){
     p.background(255);
@@ -24,7 +27,6 @@ let sketch = function(p) {
   }
 
   let touchblock = 'invisible';
-
   p.mousePressed = function(){
     if($('.touchblock').is(':visible'))
       touchblock = 'visible';
@@ -33,9 +35,14 @@ let sketch = function(p) {
   }
 
   p.mouseClicked = function(){
-    if(p.mouseY > 60 && touchblock === 'invisible' && !$('.touchblock').is(':visible')){
-      let imgTest=p.loadImage("resource/processing/"+ parseInt(Math.random() * 6 + 1) +".png");
-      objects[counter] = new p_Object(imgTest, p.mouseX, p.mouseY, parseInt(Math.random() * 14) -7, -15);
+    if(window.innerHeight - 80 > p.mouseY && p.mouseY > 60 && touchblock === 'invisible' && !$('.touchblock').is(':visible')){
+      objects[counter] = new p_Object(
+        p.loadImage("resource/processing/"+ parseInt(Math.random() * 6 + 1) +".png"),
+        p.mouseX,
+        p.mouseY,
+        parseInt(Math.random() * 14) -7,
+        -15
+      );
       counter++;
     }
   }
@@ -65,14 +72,14 @@ class p_Object{
   }
 
   move(){
-    if(this.ypos < window.innerHeight - 100){
+    if(this.ypos < window.innerHeight - 80){
       this.xpos += this.xVector;
       this.ypos += this.yForce;
       this.yForce += this.gravity;
       this.degree += this.rotationForce;
     }
     else {
-      this.ypos = window.innerHeight - 100;
+      this.ypos = window.innerHeight - 80;
     }
   }
 }

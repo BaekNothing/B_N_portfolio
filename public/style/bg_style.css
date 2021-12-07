@@ -36,7 +36,7 @@
     font-family: "Gilbeot_TG";
 }
 
-.dragblock 
+.dragblock
 {
 	-ms-user-select: none;
 	-moz-user-select: -moz-none;
@@ -221,7 +221,7 @@
 	position: absolute;
 	width: 40px;
 	height: 40px;
-
+	cursor: pointer;
 	bottom: 20px;
 	right: 20px;
 }
