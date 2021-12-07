@@ -36,6 +36,14 @@
     font-family: "Gilbeot_TG";
 }
 
+.dragblock 
+{
+	-ms-user-select: none;
+	-moz-user-select: -moz-none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+}
 
 .topbar
 {
@@ -168,6 +176,7 @@
 	width: 400px;
 	height: 400px;
 	position: absolute;
+	z-index: 2;
 	left: 50%;
 	top: 45%;
 	overflow: hidden;

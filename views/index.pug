@@ -14,14 +14,9 @@ block content
 		div.loading
 			img.loading-image(src="resource/imgs/rocket.gif", alt="loading")
 		script(type='text/javascript', src="/javascripts/p5_screen.js")
-		div.background
+		div.background.stop-dragging
 			div.p5_screen
-			div.center_animation
-				div.animation_frame
-				div.animation_contents
-				div.animation_exit
-				div.animation_random
-			div#complapins.trash(onclick="location.href='http://www.kartsdesign.net/portfolio/hinder/';")
+			div#complapins.trash.dragblock(onclick="location.href='http://www.kartsdesign.net/portfolio/hinder/';")
 				img.icon(src="resource/imgs/folders.png", alt="trash_icon")
 				p Senier Project
 			div.infocard
@@ -29,7 +24,7 @@ block content
 				p.infotext(style="font-family : Gilbeot_TG") "Still looking for a job"
 				p.infotext
 					| UX/UI Designer <br> Product Manager <br> Unity/web Developer
-			div.folders
+			div.folders.dragblock
 				div#unity.folder
 					img#unity.icon(src="resource/imgs/folders.png", alt="folder_icon")
 					p#unity Unity
@@ -40,6 +35,11 @@ block content
 					img#design.icon(src="resource/imgs/folders.png", alt="folder_icon")
 					p#design UX/UI
 		div.touchblock
+		div.center_animation
+			div.animation_frame
+			div.animation_contents
+			div.animation_exit
+			div.animation_random
 		div.folder_popup
 			div.folder_exit
 			div.folder_contents

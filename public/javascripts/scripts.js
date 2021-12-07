@@ -3,6 +3,7 @@ window.onload = function(){
     $('.loading').hide();
     $('.folder_popup').hide();
     $('.center_popup').hide();
+    $('.center_animation').hide();
     $('.touchblock').hide();
     $('.zoom_img').hide();
 
@@ -22,13 +23,12 @@ window.onload = function(){
         else if($('.center_animation').is(':visible')){
           $('.center_animation').hide(100);
           $('.animation').css({'background-image': 'url("../resource/imgs/animation.png")'});
+          $('.touchblock').hide();
           window.clearInterval(anime);
         }
       }
     });
-    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
-    if(!isMobile)
-      loadanime();
+
     /* Dance */
     var plaied = 0;
     $('.music').on('click', function(){
@@ -72,11 +72,13 @@ window.onload = function(){
     $('.animation, .animation_exit').on('click', function(){
       if($('.center_animation').is(':visible')){
           $('.center_animation').hide(100);
+          $('.touchblock').hide();
           $('.animation').css({'background-image': 'url("../resource/imgs/animation.png")'});
           window.clearInterval(anime);
       }
       else{
         $('.center_animation').show(100);
+        $('.touchblock').show();
         loadanime();
         $('.animation').css({'background-image': 'url("../resource/imgs/animation_after.png")'});
       }
