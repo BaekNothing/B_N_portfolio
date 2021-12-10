@@ -149,7 +149,7 @@
 }
 
 .icon{
-	/*pointer-events: none;*/
+	pointer-events: none;
 	width: 100%;
 	height: 100%;
 	margin-bottom: 10px;
@@ -159,17 +159,26 @@
 	filter: blur(0px);
 	transition: filter .1s;
 }
-.icon:hover{
+/* icon을 선택할 수 있게하면 안됨 div id로 list를 읽어오기때문에, icon이 클릭되면 불러오는 구조가 망가진다.*/
+.folder:hover > .icon{
 	filter: blur(1px);
 }
 
 .icon_after{
-	/*pointer-events: none;*/
+	pointer-events: none;
 	position: absolute;
 	width : 100%;
 	height: 100%;
 	top : 0;
 	left: 0;
+	opacity: 0%;
+	transition: opacity.1s;
+}
+.folder:hover > .icon_after{
+	opacity: 100%;
+}
+.trash:hover > .icon_after{
+	opacity: 100%;
 }
 
 .background{
@@ -289,10 +298,11 @@
 }
 
 .infotext{
-	font-family: "Gilbeot";
-	font-size: 24px;
+	font-family: 'Noto Sans KR', sans-serif;
+/* font-family: "Gilbeot"; */
+	font-size: 16px;
 	text-align: left;
-	line-height: 32px;
+	line-height: 28px;
 
 	filter: drop-shadow(1px 1px 2px #aaaaaa);
 }
