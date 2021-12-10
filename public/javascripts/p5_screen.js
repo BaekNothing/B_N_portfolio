@@ -15,8 +15,7 @@ let sketch = function(p) {
   }
   p.draw = function(){
     p.clear();
-    for (var i = 0; i < counter; i++)
-    {
+    for (var i = 0; i < counter; i++){
       p.push()
       p.translate(objects[i].xpos, objects[i].ypos);
       p.rotate(p.radians(objects[i].degree));
@@ -44,27 +43,28 @@ let sketch = function(p) {
         -15
       );
       counter++;
-      if(counter > 20){
-        objects.shift();
+      if(counter > 15){
+        let remObj = objects.shift();
+        delete(remObj);
         counter--;
       }
     }
   }
 
   p.keyPressed = function(){
-    if(p.key === 'Escape')
-    {
+    if(p.key === 'Escape'){
       p.clear();
-      for (let i = objects.length; i > 0; i--)
-        objects.pop();
+      for (let i = objects.length; i > 0; i--){
+        let remObj = objects.pop();
+        delete(remObj);
+      }
       counter = 0;
     }
   }
 };
 
 class p_Object{
-  constructor(img, xpos, ypos, xVector, yForce)
-  {
+  constructor(img, xpos, ypos, xVector, yForce){
     this.img = img;
     this.xpos = xpos;
     this.ypos = ypos;
