@@ -1,10 +1,9 @@
 @media screen and (max-width: 479px) {
 
   /* bg_style  */
-
   :root{
   	--icon-size: 90px;
-  	--icon-font-size : 32px;
+  	--icon-font-size : 28px;
   	--icon-padding-RL: 56px;
     --center: 95%;
   }
@@ -55,9 +54,9 @@
   }
 
   .infotext{
-  	margin-left: -20px;
+  	margin-left: -24px;
   	font-family: 'Noto Sans KR', sans-serif;
-  	font-size: 18px;
+  	font-size: 12px;
   	text-align: left;
   	line-height: 22px;
   }
