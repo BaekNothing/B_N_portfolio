@@ -1,7 +1,7 @@
 :root{
 	--folderwidth: 90%;
 	--folderheight: 66%;
-	--folder_contents-font-size: 22px;
+	--folder_contents-font-size: 16px;
 	--folder-icon-size: 90px;
 }
 
@@ -69,8 +69,7 @@
 }
 
 .folder_content_mid_p{
-	height: auto;
-
+	height: 22px;
 }
 
 .folder_content_p{

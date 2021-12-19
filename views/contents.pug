@@ -27,14 +27,19 @@ script.
       }
   });
 
-
-p.contents_subtitle=content_subtitle
-p.contents_title=content_title
-- for(var i = 0; i < content_imgs; i++)
-  image.contents_img(src="resource/design/" + content_title + "/img/img" + i + ".jpg", alt="contents_img")
-- for(var j = 0; j < content_movs; j++)
-  iframe.contents_mov(src=content_movurls[j] title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+- if(content_maintext[0].charAt(0) == 'v')
+  p.contents_subtitle=content_maintext[1]
+- else 
+  p.contents_subtitle 
+p.contents_title=content_title.substring(5)
+p.contents_date=content_maintext[2]
 div.contents_textArea
-  p.contents_date=content_maintext[0]
-  - for(var k = 1; k < content_texts; k++)
+  - for(var k = 3; k < content_texts; k++)
     p.contents_text=content_maintext[k]
+- if(content_movurls[0].charAt(0) != "n")
+  - for(var j = 0; j < content_movs; j++)
+    iframe.contents_mov(src=content_movurls[j] title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+- if(content_imgs != -1)
+  div.mov_gap
+  - for(var i = 0; i < content_imgs; i++)
+      image.contents_img(src="resource/" + content_category + "/" + content_title + "/img/img" + i + ".jpg", alt="contents_img")

@@ -15,29 +15,34 @@ router.post('/', function(req, res, next) {
 
   try{
   fs.readdir(dirSrc+'/img', function(error, imglist){
-    imgcount = imglist.length;
-    fs.readdir(dirSrc+'/mov', function(error, movlist){
-      movcount = movlist.length;
-      try{
-        movurllist = fs.readFileSync(dirSrc+'/mov/list.txt', 'utf-8').split('\n');
-        console.log(movurllist);
-      }catch(error){ console.log('mov not exit'); }
-      fs.readdir(dirSrc+'/unity', function(error, unitylist){
-        unitycount = unitylist.length;
+    fs.exists(dirSrc+'/img/null.txt',function(exists){
+      if(exists)
+        imgcount = -1;
+      else
+        imgcount = imglist.length;
+      fs.readdir(dirSrc+'/mov', function(error, movlist){
+        movcount = movlist.length;
         try{
-        texts = fs.readFileSync(dirSrc+'/main.txt', 'utf-8').split('\n');
-        textcount = texts.length;
-      }catch(error){ console.log('txt not exit'); }
-
-        res.render('contents', {
-            content_title: req.body.name,
-            content_subtitle: 'subtitle',
-            content_imgs: imgcount,
-            content_movs: movcount,
-            content_movurls : movurllist,
-            content_unitys: unitycount,
-            content_maintext: texts,
-            content_texts: textcount
+          movurllist = fs.readFileSync(dirSrc+'/mov/list.txt', 'utf-8').split('\n');
+          console.log(movurllist);
+        }catch(error){ console.log('mov not exit'); }
+        fs.readdir(dirSrc+'/unity', function(error, unitylist){
+          unitycount = unitylist.length;
+          try{
+            texts = fs.readFileSync(dirSrc+'/main.txt', 'utf-8').split('\n');
+            textcount = texts.length;
+          }catch(error){ console.log('txt not exit'); }
+          res.render('contents', {
+              content_category: req.body.category,
+              content_title: req.body.name,
+              content_subtitle: 'subtitle',
+              content_imgs: imgcount,
+              content_movs: movcount,
+              content_movurls : movurllist,
+              content_unitys: unitycount,
+              content_maintext: texts,
+              content_texts: textcount
+          });
         });
       });
     });

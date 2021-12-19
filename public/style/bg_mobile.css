@@ -40,6 +40,10 @@
     height: 0px;
   }
 
+  .whoami{
+    visibility: hidden;
+  }
+
   .folder{
     margin-bottom : 60px;
   }
