@@ -1,0 +1,10 @@
+invisible
+달팽이 키우기
+2020 개인작업
+
+졸업 프로젝트를 시작하기 전에 Dolgogy Adventure의 리소스를 최대한 활용해서, 기획-제작-출시의 세 단계를 압축적으로 경험해보기 위해 빠르게 만들어본 키우기류 게임입니다.
+-
+단순한 UI를 통해 달팽이를 키우기 위해 할 수 있는 것들을 최대한
+압축적으로 전달하고자 했습니다.
+-
+https://play.google.com/store/apps/details?id=com.BaekNothing.Snail_BaekNothing

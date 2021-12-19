@@ -5,7 +5,7 @@ let sketch = function(p) {
   let counter = 0;
 
   p.setup = function(){
-    p.createCanvas(parseInt($('.background').css('width')), parseInt($('.background').css('height')));
+    var cnv = p.createCanvas(parseInt($('.background').css('width')), parseInt($('.background').css('height')));
     p.background(255);
     p.fill(0);
     p.imageMode(p.CENTER);
