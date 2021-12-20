@@ -33,13 +33,31 @@ script.
   p.contents_subtitle 
 p.contents_title=content_title.substring(5)
 p.contents_date=content_maintext[2]
+//text Area
 div.contents_textArea
   - for(var k = 3; k < content_texts; k++)
     p.contents_text=content_maintext[k]
-- if(content_movurls[0].charAt(0) != 'n')
+//mov Area
+- if(content_movs > 0)
   - for(var j = 0; j < content_movs; j++)
-    iframe.contents_mov(src=content_movurls[j] title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
-- if(content_imgs != -1)
+    - if(content_movurls[j].length > 10)
+      iframe.contents_mov(src=content_movurls[j] title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+//img Area
+- if(content_imgs > 0)
   div.mov_gap
-  - for(var i = 0; i < content_imgs; i++)
+  - if(!isMobile)
+    image.contents_img(src="resource/" + content_category + "/" + content_title + "/img/img0.jpg", alt="contents_img")
+    - for(var i = 1; i < content_imgs; i++)
+      image.contents_img(src="resource/" + content_category + "/" + content_title + "/img/img" + i + ".jpg", alt="contents_img", style="visibility: hidden; margin:0px; height:0px;")
+  - else
+    - for(var i = 0; i < content_imgs; i++)
       image.contents_img(src="resource/" + content_category + "/" + content_title + "/img/img" + i + ".jpg", alt="contents_img")
+//unity Area
+//git Area
+- if(content_gits > 0)
+  - for(var m = 0; m < content_gits; m++)
+    - if(content_giturls[m].length > 10)
+      iframe(width='90%' height='350' src="data:text/html;charset=utf-8,\
+      <head><base target='_blank' /></head>\
+      <body><script src='https://" + content_giturls[m] + "'></script>\
+      </body>")
