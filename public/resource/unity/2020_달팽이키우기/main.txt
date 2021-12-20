@@ -7,4 +7,11 @@ invisible
 단순한 UI를 통해 달팽이를 키우기 위해 할 수 있는 것들을 최대한
 압축적으로 전달하고자 했습니다.
 -
+다운로드 링크 :
 https://play.google.com/store/apps/details?id=com.BaekNothing.Snail_BaekNothing
+-
+깃허브 :
+https://github.com/BaekNothing/Dalpangyeekiwoogi.git
+-
+메인 코드:
+https://gist.github.com/BaekNothing/a6821ff41dd2f8344ee69c5dc961f5fa.js

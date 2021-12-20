@@ -36,7 +36,7 @@ p.contents_date=content_maintext[2]
 div.contents_textArea
   - for(var k = 3; k < content_texts; k++)
     p.contents_text=content_maintext[k]
-- if(content_movurls[0].charAt(0) != "n")
+- if(content_movurls[0].charAt(0) != 'n')
   - for(var j = 0; j < content_movs; j++)
     iframe.contents_mov(src=content_movurls[j] title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
 - if(content_imgs != -1)
