@@ -46,12 +46,12 @@ div.contents_textArea
 - if(content_imgs > 0)
   div.mov_gap
   - if(!isMobile)
-    image.contents_img(src="resource/" + content_category + "/" + content_title + "/img/img0.jpg", alt="contents_img")
+    image.contents_img(src="resource/" + content_category + "/" + content_title + "/img/" + content_imglist[0], alt="contents_img")
     - for(var i = 1; i < content_imgs; i++)
-      image.contents_img(src="resource/" + content_category + "/" + content_title + "/img/img" + i + ".jpg", alt="contents_img", style="visibility: hidden; margin:0px; height:0px;")
+      image.contents_img(src="resource/" + content_category + "/" + content_title + "/img/" + content_imglist[i], alt="contents_img", style="visibility: hidden; margin:0px; height:0px;")
   - else
     - for(var i = 0; i < content_imgs; i++)
-      image.contents_img(src="resource/" + content_category + "/" + content_title + "/img/img" + i + ".jpg", alt="contents_img")
+      image.contents_img(src="resource/" + content_category + "/" + content_title + "/img/" + content_imglist[i], alt="contents_img")
 //unity Area
 //git Area
 - if(content_gits > 0)

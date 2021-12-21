@@ -52,6 +52,7 @@ var fs = require('fs');
 
 router.post('/', async function(req, res, next) {
   var dirSrc = './public/resource/'+ req.body.category + '/' + req.body.name;
+  var imglist = 0;
   var imgcount = 0;
   var movcount = 0;
   var movurllist = 0;
@@ -62,11 +63,11 @@ router.post('/', async function(req, res, next) {
   var texts = 0;
   var textcount = 0;
 
-  imgcount = await readdirectory(dirSrc, '/img');
-  if(imgcount[0] == 'null.txt' || imgcount == 0)
-    imgcount = 0;
+  imglist = await readdirectory(dirSrc, '/img');
+  if (imglist == 0 || imglist[0] == "null.txt")
+    imgcount = -1;
   else
-    imgcount = imgcount.length;
+    imgcount = imglist.length;
 
   movurllist = await readfile(dirSrc, '/mov', '/list.txt');
   if (movurllist == "file not exists" || movurllist[0] == "null")
@@ -93,6 +94,7 @@ router.post('/', async function(req, res, next) {
       content_title: req.body.name,
       content_subtitle: 'subtitle',
       content_imgs: imgcount,
+      content_imglist: imglist,
       content_movs: movcount,
       content_movurls : movurllist,
       content_gits: gitcount,
