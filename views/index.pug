@@ -1,91 +1,43 @@
 extend layout.pug
 
 block content
-	nav.topbar
-		a(href="/")
-			div.home
-		div.music
-			audio.bgm
-				source(src="resource/audio/on-the-up-and-up.mp3")
-		div.dance
-		div.animation
-		div.guidtext ESC=Close&Clear
 	body
+		div.introduce
+			a(href="/")
+				h1.btn.txt.title(href="/")
+					| BAEK. <br> NOTHING
+			p.txt.subtext
+				| 0 에서 출발해,
+				br
+				| 단서와 논리를 갖고
+				br
+				| 스스로 해를 찾아
+				br
+				| 빠르게 100까지 도달해내는
+				br
+				| Degital Creator
+				br
+				| 100 & 0
+		div.introduce.bottom
+			div.icons
+				a.btn.icon.fa.fa-instagram(href="https://www.instagram.com/baek.nothing/?hl=ko")
+				a.btn.fa(href="/introduce")
+					i.icon.material-icons person
+			p.txt.mail baeknothing@gmail.com
+		div.contents
+			- for (var i = 0; i < unitycount; i++){
+				div.content(onclick="location.href ='/content?category=unity&name="+unitylist[i]+"'" style="background-image : url('resource/imgs/thumbnails/unity/"+ unitylist[i] +".png')")
+					div.content_black=unitylist[i]
+			- }
+			- for (var i = 0; i < designcount; i++){
+				div.content(onclick="location.href ='/content?category=design&name="+designlist[i]+"'" style="background-image : url('resource/imgs/thumbnails/design/"+ designlist[i] +".png')")
+					div.content_black=designlist[i]
+			- }
+			- for (var i = 0; i < webcount; i++){
+				div.content(onclick="location.href ='/content?category=web&name="+weblist[i]+"'" style="background-image : url('resource/imgs/thumbnails/web/"+ weblist[i] +".png')")
+					div.content_black=weblist[i]
+			- }
+		div.txt.btn.see_more more
+			div.see_more_icon
 		div.loading
 			img.loading-image(src="resource/imgs/rocket.gif", alt="loading")
-		div.background
-			script(type='text/javascript', src="/javascripts/p5_screen.js")
-			div.p5_screen
-			div#complapins.trash.dragblock(onclick="location.href='http://www.kartsdesign.net/portfolio/hinder/';")
-				img.icon(src="resource/imgs/folder_seniorproject.png", alt="trash_icon")
-				img.icon_after(src="resource/imgs/folder_seniorproject_after.png", alt="trash_icon")
-				p : Hinder : Senior Project
-			div.infocard.dragblock
-				p.infotext BAEK_NOTHING
-				p.infotext(style="font-weight : 700") ᕦ( ᐛ )ᕡ 구직중 
-				p.infotext
-					| UX/UI Designer <br> Product Manager <br> Unity/web Developer
-			div.folders.dragblock
-				div#unity.folder
-					img#unity.icon(src="resource/imgs/folder_unity.png", alt="folder_icon")
-					img#unity.icon_after(src="resource/imgs/folder_unity_after.png", alt="folder_icon")
-					p#unity Unity
-				div#web.folder
-					img#web.icon(src="resource/imgs/folder_web.png", alt="folder_icon")
-					img#unity.icon_after(src="resource/imgs/folder_web_after.png", alt="folder_icon")
-					p#web Web
-				div#design.folder
-					img#design.icon(src="resource/imgs/folder_ux.png", alt="folder_icon")
-					img#unity.icon_after(src="resource/imgs/folder_ux_after.png", alt="folder_icon")
-					p#design UX/UI
-		div.touchblock
-		div.center_animation
-			div.animation_frame
-			div.animation_contents
-			div.animation_exit
-			div.animation_random
-		div.folder_popup
-			div.folder_exit
-			div.folder_contents
-				- if (unitycount != 0)
-					div#folder_unity.folder_mid
-						- for (var i = unitycount - 1; i >= 0; i--)
-							div(id=unitylist[i], class = "folder_content")
-								img.icon(src="resource/imgs/unity/" + unitylist[i] + ".png", alt="folder_icon")
-								div.folder_content_mid_p
-									p(id=unitylist[i], class = "folder_content_p")=unitylist[i].substring(5)
-				- else
-						img#folder_unity.folder_empty(src="resource/imgs/empty.png", alt="empty_icon")
-				- if (designcount != 0)
-					div#folder_design.folder_mid
-						- for (var i = 0; i < designcount; i++)
-							div(id=designlist[i], class = "folder_content")
-								img.icon(src="resource/imgs/folders.png", alt="folder_icon")
-								div.folder_content_mid_p
-									p(id=designlist[i], class = "folder_content_p")=designlist[i]
-				- else
-					img#folder_design.folder_empty(src="resource/imgs/empty.png", alt="empty_icon")
-				- if (webcount != 0)
-					div#folder_web.folder_mid
-						- for (var i = 0; i < webcount; i++)
-							div(id=weblist[i], class = "folder_content")
-								img.icon(src="resource/imgs/folders.png", alt="folder_icon")
-								div.folder_content_mid_p
-									p(id=weblist[i], class = "folder_content_p")=weblist[i]
-				- else
-					img#folder_web.folder_empty(src="resource/imgs/empty.png", alt="empty_icon")
-			div.folder_frame
-		div.center_popup
-			div.popup_exit
-			div.popup_contents
-			div.popup_frame
-		div.zoom_img
-			div.zoom_exit
-			div.zoom_contents
-				p.zoom_title nothing_selected0
-			div.zoom_frame
-			div.zoom_prev <
-			div.zoom_next >
-	footer
-		p.copyright mail : baeknothing@gmail.com 
-		p.copyright copyright@baek_seongyeol

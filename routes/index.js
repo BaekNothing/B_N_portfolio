@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
       console.log(designlist);
       fs.readdir(dirSrc + 'web', function(error,weblist){
         console.log(weblist);
-        res.render('index', {
+        res.render('2021_index', {
           title: 'Baeknothing_portfolio',
           unitycount: unitylist.length,
           unitylist: unitylist,
@@ -28,40 +28,32 @@ router.get('/', function(req, res, next) {
   });}catch(error){console.log(error);}
 });
 
-/*
-router.post('/name', function(req, res, next) {
-  var dirSrc = './public/resource/'+ req.body.category + '/' + req.body.name;
-  console.log(dirSrc);
-  var imgcount = 0;
-  var movcount = 0;
-  var movurllist = 0;
-  var unitycount = 0;
-  var unityurllist = 0;
+router.get('/2022', async function(req, res, next){
+  var dirSrc = './public/resource/';
+  var unitylist;
+  var designlist;
+  var weblist;
 
-  try{
-  fs.readdir(dirSrc+'/img', function(error, imglist){
-    imgcount = imglist.length;
-    fs.readdir(dirSrc+'/mov', function(error, movlist){
-      movcount = movlist.length;
-      try{
-        movurllist = fs.readFileSync(dirSrc+'/mov/list.txt', 'utf-8').split('\n');
-        console.log(movurllist);
-      }catch(error){ console.log('mov not exit'); }
-      fs.readdir(dirSrc+'/unity', function(error, unitylist){
-        unitycount = unitylist.length;
-        res.render('contents', {
-            content_title: req.body.name,
-            content_subtitle: 'subtitle',
-            content_imgs: imgcount,
-            content_movs: movcount,
-            content_movurls : movurllist,
-            content_unitys: unitycount,
-            content_dates: '2021.04.05.Mon',
-            content_texts: 'texts'
-        });
-      });
-    });
-  });}catch(error){ console.log('notend'); }
+  unitylist = await readDir(dirSrc, 'unity');
+  designlist = await readDir(dirSrc, 'design');
+  weblist = await readDir(dirSrc, 'web');
+
+  await res.render('index',{
+    title : 'Baeknothing_portfolio',
+
+    unitycount: unitylist.length,
+    unitylist: unitylist,
+    designcount: designlist.length,
+    designlist: designlist,
+    webcount: weblist.length,
+    weblist: weblist
+  });
 });
-*/
+
+async function readDir(path, name){
+  try{
+    return (fs.promises.readdir(path + name));
+  }catch(error){ return (-1); }
+}
+
 module.exports = router;

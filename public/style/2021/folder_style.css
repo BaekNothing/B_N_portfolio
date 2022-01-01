@@ -1,0 +1,106 @@
+:root{
+	--folderwidth: 90%;
+	--folderheight: 66%;
+	--folder_contents-font-size: 16px;
+	--folder-icon-size: 90px;
+}
+
+.folder_popup{
+	pointer-events: auto;
+  background-color: rgba(0,0,0,0);
+
+	z-index : 2;
+	position: absolute;
+	top: 0px;
+  width: 80%;
+  height: 100%;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	overflow: hidden;
+}
+.folder_exit{
+	cursor: pointer;
+	position: absolute;
+	z-index : 3;
+	right: 5%;
+	top: 17%;
+	border-radius: 15px;
+	width: 40px;
+	height: 40px;
+}
+
+.folder_contents{
+	font-size : var(--folder_contents-font-size);
+	background-color : white;
+	width: var(--folderwidth);
+	height: var(--folderheight);
+	border-radius : 20px;
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	padding: 0px;
+	overflow-y: scroll;
+	-ms-overflow-style: none;
+
+	pointer-events: auto;
+}
+.folder_contents::-webkit-scrollbar{
+	display:none;
+}
+
+.folder_mid{
+	position:absolute;
+	width : 85%;
+	height : auto;
+	padding-top: 80px;
+	padding-bottom: 90px;
+	left:50%;
+	transform: translate(-50%, 0);
+	line-height: 85px;
+}
+
+.folder_content{
+	cursor: pointer;
+	display: inline-block;
+	margin: 30px;
+	width: var(--folder-icon-size);
+	height: var(--folder-icon-size);
+}
+
+.folder_content_mid_p{
+	height: 22px;
+}
+
+.folder_content_p{
+	font-size: var(--folder_contents-font-size);
+	line-height: 26px;
+}
+
+.folder_gap{
+	height: 55px;
+}
+
+.folder_frame{
+	pointer-events: none;
+	border-image: url('/resource/imgs/dotsframe.png') round;
+	border-image-slice: calc(50 / 184 * 100%) calc(80 / 284 * 100%) fill;
+	border-image-width: 30px 48px;
+
+	width: var(--folderwidth);
+	height: var(--folderheight);
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+
+	filter: drop-shadow(4px 4px 6px #dddddd);
+}
+
+.folder_empty{
+	position: absolute;
+	left:50%;
+	transform: translate(-50%, 0);
+	height:100%;
+	width:auto;
+}

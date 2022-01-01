@@ -9,6 +9,7 @@ const rateLimit = require("express-rate-limit");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var nameRouter = require('./routes/name');
+var contentRouter = require('./routes/content')
 var animationRouter = require('./routes/animation');
 
 var app = express();
@@ -33,6 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/name', nameRouter);
+app.use('/content', contentRouter);
 app.use('/animation', animationRouter);
 
 // catch 404 and forward to error handler

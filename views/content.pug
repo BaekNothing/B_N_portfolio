@@ -1,0 +1,35 @@
+extend layout.pug
+
+block content
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+  script.
+    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+  body
+    div.introduce
+      a(href="/")
+        h1.btn.txt.title(href="/")
+          | BAEK. <br> NOTHING
+      p.txt.subtext=texts
+    div.introduce.bottom
+      div.icons
+        a.btn.icon.fa.fa-instagram(href="https://www.instagram.com/baek.nothing/?hl=ko")
+        a.btn.fa(href="/introduce")
+          i.icon.material-icons person
+      p.txt.mail baeknothing@gmail.com
+    div.contents
+      - for (var i = 0; i < imgcount; i++){
+        div.content(style="background-image : url('resource/unity/" + content_title + "/img/"+ imglist[i] +".jpg')")
+      - }
+      - if(content_movs > 0)
+        - for(var j = 0; j < content_movs; j++)
+          - if(content_movurls[j].length > 10)
+            iframe.content(src=content_movurls[j] title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+      - if(content_gits > 0)
+        - for(var m = 0; m < content_gits; m++)
+          - if(content_giturls[m].length > 10)
+            iframe(width='90%' height='350' src="data:text/html;charset=utf-8,\
+            <head><base target='_blank' /></head>\
+            <body><script src='https://" + content_giturls[m] + "'></script>\
+            </body>")
+    div.loading
+      img.loading-image(src="resource/imgs/rocket.gif", alt="loading")

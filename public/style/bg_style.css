@@ -1,351 +1,290 @@
 :root{
-	--icon-size: 90px;
-	--icon-font-size : 28px;
-	--icon-padding-RL: 80px;
+	--sns-icon-size	: 44px;
+
+	--line-height		: 40px;
+	--spacing				: 40px;
+	--spacing-twice	: 80px;
+
+	--title-size 		: 76px;
+	--font-size 		: 24px;
+	--text-color		: #5F6368;
+
+
+	--ani-duration : 1.3s;
+}
+
+@font-face {
+    src: url("/fonts/Noto_Sans/NotoSansKR-Thin.otf");
+    font-family: 'Noto_Sans-Thin';
+}
+
+@font-face {
+    src: url("/fonts/Noto_Sans/NotoSansKR-Light.otf");
+    font-family: 'Noto_Sans-Light';
+}
+
+@font-face {
+    src: url("/fonts/Noto_Sans/NotoSansKR-Regular.otf");
+    font-family: 'Noto_Sans-Regular';
+}
+
+@font-face {
+    src: url("/fonts/Noto_Sans/NotoSansKR-Medium.otf");
+    font-family: 'Noto_Sans-Medium';
 }
 
 *{
-	word-break:break-all;
-	font-family: 'Gilbeot';
-	margin: 0;
-	padding: 0;
+	margin					: 0;
+	padding					: 0;
 
 	-ms-overflow-style: none;
-	scrollbar-width: node;
-
-	text-align: center;
-	font-size: inherit;
-	letter-spacing : 0.3px;
+	scrollbar-width	: node;
 }
 
 *::-webkit-scrollbar{
-	display: none;
+	display					: none;
 }
 
-@font-face {
-    src: url("/fonts/Gilbeot/Gilbeot.woff");
-    font-family: "Gilbeot";
+body{
+	top 						: 0px;
+	position				: absolute;
+	overflow				: hidden;
+	width						: 100%;
+	height					: 100%;
+	background			: linear-gradient(
+											270deg,
+											rgba(83, 83, 83, 0.2) 0%,
+											rgba(255, 255, 255, 0) 19.87%
+											), #FFFFFF;
 }
 
-@font-face {
-    src: url("../fonts/Gilbeot_Rainbow/Gilbeot_Rainbow.otf");
-    font-family: "Gilbeot_Rainbow";
+a{
+	text-decoration	: none;
 }
 
-@font-face {
-    src: url("../fonts/Gilbeot_TG/Gilbeot_TG.otf");
-    font-family: "Gilbeot_TG";
+.txt{
+	word-break			:break-all;
+	font-family			: 'Noto_Sans-Thin';
+	color						: var(--text-color);
+	letter-spacing 	: -0.1px;
+	line-height			: var(--line-height);
 }
 
-.dragblock
-{
-	-ms-user-select: none;
-	-moz-user-select: -moz-none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	user-select: none;
+.btn:hover{
+	opacity					: 0.7;
+	cursor					: pointer;
 }
 
-.topbar
-{
-		text-align: center;
-		/*background-image: url("../resource/imgs/topframe.png");*/
-		background-color: white;
-		background-image: url("../resource/imgs/topframe.png");
-		background-size: 45px 60%;
-		background-position: bottom;
-		background-repeat: repeat-x;
-		border-bottom-width : 5px;
+/* introduce */
 
-		z-index : 1;
-		position: absolute;
-		padding-top: 8px;
-		top: 0px;
-		width: 100%;
-		height: 60px;
+.introduce{
+	left						:0;
+	width						: 548px;
+	height					: 100%;
+	text-align			: left;
 }
 
-.home{
-	cursor: pointer;
-	z-index: 3;
-	display: block;
-	background-image: url("../resource/imgs/home.png");
-	background-size: auto 100%;
-	background-repeat: no-repeat;
-	background-position: center;
 
-	float :left;
-	margin-left: 20px;
-	width: 50px;
-	height: 50px;
-}
-.dance{
-	cursor: pointer;
-	z-index: 3;
-	display: block;
-	background-image: url("../resource/imgs/dance_play.png");
-	background-size: auto 100%;
-	background-repeat: no-repeat;
-	background-position: center;
+.title{
+	width 					: 400px;
+	font-family			:'Noto_Sans-Light';
+	letter-spacing	: 1.2px;
+	color 					: #535353;
+	font-size 			: var(--title-size);
+	font-weight			: 400;
+	line-height			: 72px !important;
 
-	float :left;
-	margin-left: 10px;
-	width: 50px;
-	height: 50px;
+	margin-top			: var(--spacing);
+	margin-left			: var(--spacing);
 }
 
-.music{
-	cursor: pointer;
-	z-index: 3;
-	display: block;
-	background-image: url("../resource/imgs/music_play.png");
-	background-size: auto 100%;
-	background-repeat: no-repeat;
-	background-position: center;
-
-	float :left;
-	margin-left: 10px;
-	width: 50px;
-	height: 50px;
+.subtext{
+	margin-top			: 32px;
+	margin-left			: var(--spacing);
+	padding-left		: 6px;
+	font-size				: var(--font-size);
 }
 
-.animation{
-	cursor: pointer;
-	z-index: 3;
-	display: inline-block;
-	background-image: url("../resource/imgs/animation.png");
-	background-size: auto 100%;
-	background-repeat: no-repeat;
+/* bottom */
 
-	float :left;
-	margin-left: 10px;
-	width: 50px;
-	height: 50px;
-}
-
-.guidtext{
-	float: left;
-	text-align: left;
-	margin-left: 10px;
-	margin-top: 30px;
-}
-
-.loading {
-	width: 90%;
-	height: 100%;
-	top: 0px;
-	left: 0px;
-	position: fixed;
-	display: block;
-	opacity: 0.7;
-	background-color: #fff;
-	z-index: 99;
-	text-align: center;
-}
-.loading-image {
+.bottom{
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	z-index: 100;
+	bottom: 0;
+
+	width: 100%;
+	height: 50%;
+
+	transition-duration: var(--ani-duration);
 }
 
-.p5_screen {
-	z-index: 99;
+.icons{
+	position				: absolute;
+	right						: var(--spacing);
+	bottom					: var(--spacing-twice);
+
+	height 					: 80px;
+	width 					: auto;
 }
 
-.whoami{
-	position: absolute;
-	width: 60%;
-	min-width: 940px;
-	height: 90%;
-	min-height: 720px;
-	z-index: 2;
-	background-image: url('/resource/imgs/whoami.png');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
+.fa{
+	float						: right;
+	padding					: 20px;
 
-	left: 50%;
-	transform: translate(-50%, 0%);
+  width						: 20px;
+	height					: 40px;
+
+  text-align			: center;
+  text-decoration	: none;
 }
 
 .icon{
-	border-radius: 4px;
-	pointer-events: none;
-	width: 100%;
-	height: 100%;
-	margin-bottom: 10px;
-
-	animation-duration: 1.6s;
- 	animation-iteration-count: 0;
-	filter: blur(0px);
-	transition: filter .1s;
-}
-/* icon을 선택할 수 있게하면 안됨 div id로 list를 읽어오기때문에, icon이 클릭되면 불러오는 구조가 망가진다.*/
-.folder:hover > .icon{
-	filter: blur(1px);
+	color						: var(--text-color) !important;
+	font-size				: var(--sns-icon-size) !important;
 }
 
-.icon_after{
-	pointer-events: none;
-	position: absolute;
-	width : 100%;
-	height: 100%;
-	top : 0;
-	left: 0;
-	opacity: 0%;
-	transition: opacity.1s;
-}
-.folder:hover > .icon_after{
-	opacity: 100%;
-}
-.trash:hover > .icon_after{
-	opacity: 100%;
+.mail{
+	position				: absolute;
+	right						: var(--spacing);
+	bottom					: var(--spacing);
+
+	text-align			: right;
+	font-size				: var(--font-size);
 }
 
-.background{
-	background: url('http://testbed.nicon.nl/img/_FBs3b.svg') repeat;
-  background-size: 8px 8px;
+/* see_more */
 
-	z-index: 0;
-	top : 0px;
-	position: absolute;
-	overflow: hidden;
-	width: 100%;
-	height: 100%;
+.see_more{
+	position				: absolute;
+	right						: var(--spacing);
+	top 						: 50%;
+	transform				: translate(0, -72%);
+
+	width  					: 80px;
+	height  				: 80px;
+
+	text-align			: right;
+	font-size				: var(--font-size);
+	transition-duration: var(--ani-duration);
 }
 
-.center_animation{
-	background-color: #FFFF;
-	border-radius: 10px;
-	width: 400px;
-	height: 400px;
-	position: absolute;
-	z-index: 2;
-	left: 50%;
-	top: 45%;
-	overflow: hidden;
-	transform: translate(-50%, -50%);
+.see_more_icon{
+	position				: absolute;
+	top 						: 20px;
+
+	width  					: 80px;
+	height  				: 80px;
+
+	background-image: url("https://img.icons8.com/external-dreamstale-lineal-dreamstale/32/000000/external-left-arrow-arrows-dreamstale-lineal-dreamstale-7.png");
+	background-repeat: no-repeat;
+	background-position: center;
+
+	animation-name: ani_see_more;
+	animation-duration: var(--ani-duration);
+	animation-iteration-count: infinite;
 }
 
-.animation_contents{
-	width: 100%;
-	height: 100%;
+@keyframes ani_see_more{
+  from{
+		opacity: 1.0;
+			transform		: translate(15%, 0);
+  }
+  to{
+		opacity: 0;
+		transform			: translate(-40%, 0);
+	}
 }
 
-.animation_frame{
-	background-color: #0000;
-	pointer-events: none;
-	border-image: url('/resource/imgs/dotsframe.png') round;
-	border-image-slice: calc(50 / 184 * 100%) calc(80 / 284 * 100%) fill;
-	border-image-width: 30px 48px;
+/* contents */
+.contents{
+	position				: absolute;
+	right						: 0;
+	top 						: 0;
+	padding-top			: 30px;
+	padding-left	 	: var(--spacing);
+	padding-right		:	164px;
 
-	width: 400px;
-	height: 400px;
-	position: absolute;
-	top: 50%;
-	transform: translate(0, -50%);
+	width 					: 0;
+	height					: 100%;
 
-	filter: drop-shadow(4px 4px 6px #dddddd);
-}
-
-.animation_exit{
-	cursor: pointer;
-	position: absolute;
-	z-index : 2;
-	right: 0px;
-	top: 0px;
-	border-radius: 15px;
-	width: 40px;
-	height: 40px;
-}
-
-.animation_random{
-	background-image: url('/resource/imgs/refresh.png');
-	background-size: contain;
-	position: absolute;
-	width: 40px;
-	height: 40px;
-	cursor: pointer;
-	bottom: 20px;
-	right: 20px;
-}
-
-.folders{
-	z-index: 0;
-
-	width: auto;
-	height: auto;
-	top: 100px;
-	position: absolute;
-	right: var(--icon-padding-RL);
-	font-size : var(--icon-font-size);
-}
-
-.folder{
-	cursor: pointer;
-	margin-bottom : 70px;
-	width: var(--icon-size);
-	height: var(--icon-size);
-
-	filter: drop-shadow(4px 4px 6px #aaaaaa);
-}
-
-.trash{
-	cursor: pointer;
-	position : absolute;
-	top : 100px;
-	left : var(--icon-padding-RL);
-	width: var(--icon-size);
-	height: var(--icon-size);
-	font-size : var(--icon-font-size);
-
-	filter: drop-shadow(4px 4px 6px #aaaaaa);
-}
-
-.touchblock{
-	background-color: rgba(255,255,255,0.5);
-	/*backdrop-filter: blur(4px);*/
-	position: absolute;
-	width: 100%;
-	height: 100%;
-}
-
-.infocard{
-	position: absolute;
-	left: var(--icon-padding-RL);
-	bottom: 0;
-	width: 230px;
-	height: 250px;
-}
-
-.infotext{
-	font-family: 'Noto Sans KR', sans-serif;
-/* font-family: "Gilbeot"; */
-	font-size: 16px;
-	text-align: left;
-	line-height: 28px;
-
-	filter: drop-shadow(1px 1px 2px #aaaaaa);
-}
-
-footer{
 	text-align: center;
-	background-color:white;
-	background-image: url("../resource/imgs/bottomframe.png");
-	background-size: 45px 60%;
-	background-position: top;
-	background-repeat: repeat-x;
+	transition-duration: 0.1s;
 
-	z-index: 1;
-	position: absolute;
-	width: 100%;
-	height: 60px;
-	bottom: 0px;
+	overflow-y: auto;
+
+	opacity: 0;
+	background			: linear-gradient(
+											270deg,
+											rgba(83, 83, 83, 0.2) 0%,
+											rgba(255, 255, 255, 0) 75%
+											);
+	/* background-color: red; */
 }
-.copyright{
-	color : #aaaaaa;
-	margin-top: 10px;
-	margin-bottom: -6px;
-	position: relative;
+
+.contents::webkit-scrollbar{
+	display: visible;
+}
+
+.content{
+	display					: inline-block;
+	pointer-events 	: none;
+	height 					: 360px;
+	margin					:	20px;
+
+	border-style		: solid;
+	border-width 		: 1px;
+	border-color 		: var(--text-color);
+	background-color: #ffffff;
+	background-repeat: no-repeat;
+	background-size	: cover;
+	background-position: center;
+
+	text-align: center;
+	opacity: 0;
+	transition-duration: var(--ani-duration);
+	transition-delay: 0.3s;
+}
+
+.content_black{
+	cursor					: pointer;
+	padding-top			: 150px;
+
+	width						: 100%;
+	height					: 210px;
+
+	font-size: 36px;
+	background-color: #202124;
+
+	color						: white;
+	opacity					: 0;
+	transition-duration: 0.3s;
+}
+
+.content_black:hover{
+	opacity					: 0.4;
+}
+
+/* loading */
+
+.loading {
+	position				: fixed;
+	display					: block;
+	top							: 0px;
+	left						: 0px;
+
+	z-index					: 99;
+	width						: 90%;
+	height					: 100%;
+
+	opacity					: 0.7;
+	background-color: #ffffff;
+
+	text-align			: center;
+}
+
+.loading-image {
+	position				: absolute;
+	top							: 50%;
+	left						: 50%;
+
+	z-index					: 100;
 }

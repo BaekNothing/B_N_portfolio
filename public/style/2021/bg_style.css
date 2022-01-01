@@ -1,0 +1,351 @@
+:root{
+	--icon-size: 90px;
+	--icon-font-size : 28px;
+	--icon-padding-RL: 80px;
+}
+
+*{
+	word-break:break-all;
+	font-family: 'Gilbeot';
+	margin: 0;
+	padding: 0;
+
+	-ms-overflow-style: none;
+	scrollbar-width: node;
+
+	text-align: center;
+	font-size: inherit;
+	letter-spacing : 0.3px;
+}
+
+*::-webkit-scrollbar{
+	display: none;
+}
+
+@font-face {
+    src: url("/fonts/Gilbeot/Gilbeot.woff");
+    font-family: "Gilbeot";
+}
+
+@font-face {
+    src: url("../fonts/Gilbeot_Rainbow/Gilbeot_Rainbow.otf");
+    font-family: "Gilbeot_Rainbow";
+}
+
+@font-face {
+    src: url("../fonts/Gilbeot_TG/Gilbeot_TG.otf");
+    font-family: "Gilbeot_TG";
+}
+
+.dragblock
+{
+	-ms-user-select: none;
+	-moz-user-select: -moz-none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+}
+
+.topbar
+{
+		text-align: center;
+		/*background-image: url("../resource/imgs/topframe.png");*/
+		background-color: white;
+		background-image: url("../../resource/imgs/topframe.png");
+		background-size: 45px 60%;
+		background-position: bottom;
+		background-repeat: repeat-x;
+		border-bottom-width : 5px;
+
+		z-index : 1;
+		position: absolute;
+		padding-top: 8px;
+		top: 0px;
+		width: 100%;
+		height: 60px;
+}
+
+.home{
+	cursor: pointer;
+	z-index: 3;
+	display: block;
+	background-image: url("../../resource/imgs/home.png");
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	float :left;
+	margin-left: 20px;
+	width: 50px;
+	height: 50px;
+}
+.dance{
+	cursor: pointer;
+	z-index: 3;
+	display: block;
+	background-image: url("../../resource/imgs/dance_play.png");
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	float :left;
+	margin-left: 10px;
+	width: 50px;
+	height: 50px;
+}
+
+.music{
+	cursor: pointer;
+	z-index: 3;
+	display: block;
+	background-image: url("../../resource/imgs/music_play.png");
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	float :left;
+	margin-left: 10px;
+	width: 50px;
+	height: 50px;
+}
+
+.animation{
+	cursor: pointer;
+	z-index: 3;
+	display: inline-block;
+	background-image: url("../../resource/imgs/animation.png");
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+
+	float :left;
+	margin-left: 10px;
+	width: 50px;
+	height: 50px;
+}
+
+.guidtext{
+	float: left;
+	text-align: left;
+	margin-left: 10px;
+	margin-top: 30px;
+}
+
+.loading {
+	width: 90%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	position: fixed;
+	display: block;
+	opacity: 0.7;
+	background-color: #fff;
+	z-index: 99;
+	text-align: center;
+}
+.loading-image {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 100;
+}
+
+.p5_screen {
+	z-index: 99;
+}
+
+.whoami{
+	position: absolute;
+	width: 60%;
+	min-width: 940px;
+	height: 90%;
+	min-height: 720px;
+	z-index: 2;
+	background-image: url('/resource/imgs/whoami.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+
+	left: 50%;
+	transform: translate(-50%, 0%);
+}
+
+.icon{
+	border-radius: 4px;
+	pointer-events: none;
+	width: 100%;
+	height: 100%;
+	margin-bottom: 10px;
+
+	animation-duration: 1.6s;
+ 	animation-iteration-count: 0;
+	filter: blur(0px);
+	transition: filter .1s;
+}
+/* icon을 선택할 수 있게하면 안됨 div id로 list를 읽어오기때문에, icon이 클릭되면 불러오는 구조가 망가진다.*/
+.folder:hover > .icon{
+	filter: blur(1px);
+}
+
+.icon_after{
+	pointer-events: none;
+	position: absolute;
+	width : 100%;
+	height: 100%;
+	top : 0;
+	left: 0;
+	opacity: 0%;
+	transition: opacity.1s;
+}
+.folder:hover > .icon_after{
+	opacity: 100%;
+}
+.trash:hover > .icon_after{
+	opacity: 100%;
+}
+
+.background{
+	background: url('http://testbed.nicon.nl/img/_FBs3b.svg') repeat;
+  background-size: 8px 8px;
+
+	z-index: 0;
+	top : 0px;
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+.center_animation{
+	background-color: #FFFF;
+	border-radius: 10px;
+	width: 400px;
+	height: 400px;
+	position: absolute;
+	z-index: 2;
+	left: 50%;
+	top: 45%;
+	overflow: hidden;
+	transform: translate(-50%, -50%);
+}
+
+.animation_contents{
+	width: 100%;
+	height: 100%;
+}
+
+.animation_frame{
+	background-color: #0000;
+	pointer-events: none;
+	border-image: url('/resource/imgs/dotsframe.png') round;
+	border-image-slice: calc(50 / 184 * 100%) calc(80 / 284 * 100%) fill;
+	border-image-width: 30px 48px;
+
+	width: 400px;
+	height: 400px;
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+
+	filter: drop-shadow(4px 4px 6px #dddddd);
+}
+
+.animation_exit{
+	cursor: pointer;
+	position: absolute;
+	z-index : 2;
+	right: 0px;
+	top: 0px;
+	border-radius: 15px;
+	width: 40px;
+	height: 40px;
+}
+
+.animation_random{
+	background-image: url('/resource/imgs/refresh.png');
+	background-size: contain;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	bottom: 20px;
+	right: 20px;
+}
+
+.folders{
+	z-index: 0;
+
+	width: auto;
+	height: auto;
+	top: 100px;
+	position: absolute;
+	right: var(--icon-padding-RL);
+	font-size : var(--icon-font-size);
+}
+
+.folder{
+	cursor: pointer;
+	margin-bottom : 70px;
+	width: var(--icon-size);
+	height: var(--icon-size);
+
+	filter: drop-shadow(4px 4px 6px #aaaaaa);
+}
+
+.trash{
+	cursor: pointer;
+	position : absolute;
+	top : 100px;
+	left : var(--icon-padding-RL);
+	width: var(--icon-size);
+	height: var(--icon-size);
+	font-size : var(--icon-font-size);
+
+	filter: drop-shadow(4px 4px 6px #aaaaaa);
+}
+
+.touchblock{
+	background-color: rgba(255,255,255,0.5);
+	/*backdrop-filter: blur(4px);*/
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.infocard{
+	position: absolute;
+	left: var(--icon-padding-RL);
+	bottom: 0;
+	width: 230px;
+	height: 250px;
+}
+
+.infotext{
+	font-family: 'Noto Sans KR', sans-serif;
+/* font-family: "Gilbeot"; */
+	font-size: 16px;
+	text-align: left;
+	line-height: 28px;
+
+	filter: drop-shadow(1px 1px 2px #aaaaaa);
+}
+
+footer{
+	text-align: center;
+	background-color:white;
+	background-image: url("../../resource/imgs/bottomframe.png");
+	background-size: 45px 60%;
+	background-position: top;
+	background-repeat: repeat-x;
+
+	z-index: 1;
+	position: absolute;
+	width: 100%;
+	height: 60px;
+	bottom: 0px;
+}
+.copyright{
+	color : #aaaaaa;
+	margin-top: 10px;
+	margin-bottom: -6px;
+	position: relative;
+}

@@ -1,0 +1,199 @@
+:root{
+		--center: 480px;
+		--gray_color: #668899;
+}
+
+.center_popup{
+	pointer-events: auto;
+  background-color: rgba(0,0,0,0);
+
+	z-index : 3;
+	position: absolute;
+	top: 0px;
+  width: var(--center);
+  height: 100%;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	overflow: hidden;
+}
+.popup_exit{
+	cursor: pointer;
+	position: absolute;
+	z-index : 2;
+	right: 0px;
+	top: 10%;
+	border-radius: 15px;
+	width: 40px;
+	height: 40px;
+}
+
+#content_load{
+	width: 100%;
+	height: 100%;
+}
+
+.popup_contents{
+	background-color : white;
+	width: var(--center);
+	height: 80%;
+	border-radius : 20px;
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	padding: 0px;
+	overflow-y: scroll;
+	-ms-overflow-style: none;
+}
+.popup_contents::-webkit-scrollbar{
+	display:none;
+}
+
+.contents_title{
+	font-size : 32px;
+	margin: 16px;
+	margin-bottom : 40px;
+	line-height : 40px;
+}
+
+.contents_subtitle{
+	font-size: 20px;
+	margin: 24px;
+	margin-top : 72px;
+	line-height : 12px;
+	color : var(--gray_color);
+}
+
+.contents_textArea{
+	width:94%;
+	margin-left: 12px;
+	margin-bottom: 60px;
+	margin-top: 24px;
+	height:auto;
+}
+
+.contents_date{
+	margin: 16px;
+	margin-left : 36px;
+	margin-bottom  : 26px;
+	text-align: left;
+	color : var(--gray_color);
+}
+.contents_text{
+	font-family: 'Noto Sans KR', sans-serif;
+	margin : 36px;
+	margin-top : 0px;
+	margin-bottom : 0px;
+	text-align : left;
+	line-height : 26px;
+}
+
+#content_load{
+	width: 100%;
+	height: 100%;
+}
+
+.popup_frame{
+	pointer-events: none;
+	border-image: url('/resource/imgs/dotsframe.png') round;
+	border-image-slice: calc(50 / 184 * 100%) calc(80 / 284 * 100%) fill;
+	border-image-width: 30px 48px;
+
+	width: var(--center);
+	height: 80%;
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+
+	filter: drop-shadow(4px 4px 6px #dddddd);
+}
+
+.contents_img{
+	cursor: zoom-in;
+	width: 100%;
+	height: auto;
+	margin-top: 28px;
+}
+
+.contents_mov{
+	cursor: pointer;
+	width: 100%;
+	min-height: 480px;
+}
+
+.mov_gap{
+	/* height:32px; */
+}
+
+.zoom_img{
+	pointer-events: auto;
+  background-color: rgba(0,0,0,0);
+
+	z-index : 3;
+	position: absolute;
+	top: 0px;
+  width: 80%;
+  height: 100%;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	overflow: hidden;
+}
+
+.zoom_contents{
+	background-color : white;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	width: 100%;
+	height: 80%;
+	border-radius : 20px;
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	padding: 0px;
+	overflow-y: scroll;
+	-ms-overflow-style: none;
+}
+
+.zoom_exit{
+	cursor: pointer;
+	position: absolute;
+	z-index : 2;
+	right: 0px;
+	top: 10%;
+	border-radius: 15px;
+	width: 40px;
+	height: 40px;
+}
+
+.zoom_frame{
+	pointer-events: none;
+	border-image: url('/resource/imgs/dotsframe.png') round;
+	border-image-slice: calc(50 / 184 * 100%) calc(80 / 284 * 100%) fill;
+	border-image-width: 30px 48px;
+
+	width: 100%;
+	height: 80%;
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+.zoom_prev{
+	position: absolute;
+	top: 48%;
+	left: 30px;
+	font-size: 80px;
+	opacity: 80%;
+}
+.zoom_next{
+	position: absolute;
+	top: 48%;
+	right: 30px;
+	font-size: 80px;
+	opacity: 80%;
+}
+.zoom_title{
+	position: absolute;
+	top: 40px;
+	left: 30px;
+}
