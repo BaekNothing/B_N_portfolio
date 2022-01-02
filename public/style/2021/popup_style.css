@@ -94,7 +94,7 @@
 
 .popup_frame{
 	pointer-events: none;
-	border-image: url('/resource/imgs/dotsframe.png') round;
+	border-image: url('/resource/imgs/2021/dotsframe.png') round;
 	border-image-slice: calc(50 / 184 * 100%) calc(80 / 284 * 100%) fill;
 	border-image-width: 30px 48px;
 
@@ -167,7 +167,7 @@
 
 .zoom_frame{
 	pointer-events: none;
-	border-image: url('/resource/imgs/dotsframe.png') round;
+	border-image: url('/resource/imgs/2021/dotsframe.png') round;
 	border-image-slice: calc(50 / 184 * 100%) calc(80 / 284 * 100%) fill;
 	border-image-width: 30px 48px;
 

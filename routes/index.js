@@ -4,7 +4,7 @@ var fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  var dirSrc = './public/resource/';
+  var dirSrc = './public/resource/2021/';
   try{
   fs.readdir(dirSrc + 'unity', function(error, unitylist){
     console.log(unitylist);
@@ -29,24 +29,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/2022', async function(req, res, next){
-  var dirSrc = './public/resource/';
-  var unitylist;
-  var designlist;
-  var weblist;
+  var dirSrc = './public/resource/contents';
+  var contentlist;
 
-  unitylist = await readDir(dirSrc, 'unity');
-  designlist = await readDir(dirSrc, 'design');
-  weblist = await readDir(dirSrc, 'web');
-
-  await res.render('index',{
+  contentlist = await readDir(dirSrc, '');
+  console.log(contentlist);
+  await res.render('index', {
     title : 'Baeknothing_portfolio',
-
-    unitycount: unitylist.length,
-    unitylist: unitylist,
-    designcount: designlist.length,
-    designlist: designlist,
-    webcount: weblist.length,
-    weblist: weblist
+    contentcount: contentlist.length,
+    contentlist: contentlist
   });
 });
 

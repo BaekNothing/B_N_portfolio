@@ -5,10 +5,9 @@
 	--spacing				: 40px;
 	--spacing-twice	: 80px;
 
-	--title-size 		: 76px;
-	--font-size 		: 24px;
+	--title-size 		: 60px;
+	--font-size 		: 20px;
 	--text-color		: #5F6368;
-
 
 	--ani-duration : 1.3s;
 }
@@ -79,7 +78,7 @@ a{
 
 .introduce{
 	left						:0;
-	width						: 548px;
+	width						: 480px;
 	height					: 100%;
 	text-align			: left;
 }
@@ -87,7 +86,7 @@ a{
 
 .title{
 	width 					: 400px;
-	font-family			:'Noto_Sans-Light';
+	font-family			:'Noto_Sans-Thin';
 	letter-spacing	: 1.2px;
 	color 					: #535353;
 	font-size 			: var(--title-size);

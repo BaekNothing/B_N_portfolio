@@ -3,7 +3,7 @@ var router = express.Router();
 var fs = require('fs');
 
 router.post('/', async function(req, res, next) {
-  var dirSrc = './public/resource/'+ req.body.category + '/' + req.body.name;
+  var dirSrc = './public/resource/2021/'+ req.body.category + '/' + req.body.name;
   var imglist = 0;
   var imgcount = 0;
   var movcount = 0;

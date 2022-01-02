@@ -1,15 +1,20 @@
 window.onload = function(){
   $(document).ready(function(){
+    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
     $('.loading').hide();
+    if (isMobile)
+    {
+      $('.see_more').hide();
+      $('.contents').hide();
+    }
   });
-
   let openflag = 0;
 
   $('.see_more').on('click', function(){
     if (openflag === 0){
       shuffle();
       $('.see_more').css({'transform': 'rotate(0.499turn)'});
-      $('.bottom').css({'width' : '520px'});
+      $('.bottom').css({'width' : '480px'});
       $('.contents').css({'width' : (window.innerWidth - 692) + 'px', 'opacity' : '1', 'transition-duration': '0s'});
       $('.content').css({'opacity' : '1',
                           'transition-duration': '0.4s',

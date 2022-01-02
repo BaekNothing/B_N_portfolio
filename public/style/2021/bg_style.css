@@ -51,7 +51,7 @@
 		text-align: center;
 		/*background-image: url("../resource/imgs/topframe.png");*/
 		background-color: white;
-		background-image: url("../../resource/imgs/topframe.png");
+		background-image: url("../../resource/imgs/2021/topframe.png");
 		background-size: 45px 60%;
 		background-position: bottom;
 		background-repeat: repeat-x;
@@ -69,7 +69,7 @@
 	cursor: pointer;
 	z-index: 3;
 	display: block;
-	background-image: url("../../resource/imgs/home.png");
+	background-image: url("../../resource/imgs/2021/home.png");
 	background-size: auto 100%;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -83,7 +83,7 @@
 	cursor: pointer;
 	z-index: 3;
 	display: block;
-	background-image: url("../../resource/imgs/dance_play.png");
+	background-image: url("../../resource/imgs/2021/dance_play.png");
 	background-size: auto 100%;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -98,7 +98,7 @@
 	cursor: pointer;
 	z-index: 3;
 	display: block;
-	background-image: url("../../resource/imgs/music_play.png");
+	background-image: url("../../resource/imgs/2021/music_play.png");
 	background-size: auto 100%;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -113,7 +113,7 @@
 	cursor: pointer;
 	z-index: 3;
 	display: inline-block;
-	background-image: url("../../resource/imgs/animation.png");
+	background-image: url("../../resource/imgs/2021/animation.png");
 	background-size: auto 100%;
 	background-repeat: no-repeat;
 
@@ -160,7 +160,7 @@
 	height: 90%;
 	min-height: 720px;
 	z-index: 2;
-	background-image: url('/resource/imgs/whoami.png');
+	background-image: url('/resource/imgs/2021/whoami.png');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
@@ -236,7 +236,7 @@
 .animation_frame{
 	background-color: #0000;
 	pointer-events: none;
-	border-image: url('/resource/imgs/dotsframe.png') round;
+	border-image: url('/resource/imgs/2021/dotsframe.png') round;
 	border-image-slice: calc(50 / 184 * 100%) calc(80 / 284 * 100%) fill;
 	border-image-width: 30px 48px;
 
@@ -261,7 +261,7 @@
 }
 
 .animation_random{
-	background-image: url('/resource/imgs/refresh.png');
+	background-image: url('/resource/imgs/2021/refresh.png');
 	background-size: contain;
 	position: absolute;
 	width: 40px;
@@ -332,7 +332,7 @@
 footer{
 	text-align: center;
 	background-color:white;
-	background-image: url("../../resource/imgs/bottomframe.png");
+	background-image: url("../../resource/imgs/2021/bottomframe.png");
 	background-size: 45px 60%;
 	background-position: top;
 	background-repeat: repeat-x;

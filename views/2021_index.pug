@@ -17,8 +17,8 @@ block content
 			script(type='text/javascript', src="/javascripts/2021/p5_screen.js")
 			div.p5_screen
 			div#complapins.trash.dragblock(onclick="location.href='http://www.kartsdesign.net/portfolio/hinder/';")
-				img.icon(src="resource/imgs/folder_seniorproject.png", alt="trash_icon")
-				img.icon_after(src="resource/imgs/folder_seniorproject_after.png", alt="trash_icon")
+				img.icon(src="resource/imgs/2021/folder_seniorproject.png", alt="trash_icon")
+				img.icon_after(src="resource/imgs/2021/folder_seniorproject_after.png", alt="trash_icon")
 				p : Hinder : Senior Project
 			div.infocard.dragblock
 				p.infotext BAEK_NOTHING
@@ -27,16 +27,16 @@ block content
 					| UX/UI Designer <br> Product Manager <br> Unity/web Developer
 			div.folders.dragblock
 				div#unity.folder
-					img#unity.icon(src="resource/imgs/folder_unity.png", alt="folder_icon")
-					img#unity.icon_after(src="resource/imgs/folder_unity_after.png", alt="folder_icon")
+					img#unity.icon(src="resource/imgs/2021/folder_unity.png", alt="folder_icon")
+					img#unity.icon_after(src="resource/imgs/2021/folder_unity_after.png", alt="folder_icon")
 					p#unity Unity
 				div#web.folder
-					img#web.icon(src="resource/imgs/folder_web.png", alt="folder_icon")
-					img#unity.icon_after(src="resource/imgs/folder_web_after.png", alt="folder_icon")
+					img#web.icon(src="resource/imgs/2021/folder_web.png", alt="folder_icon")
+					img#unity.icon_after(src="resource/imgs/2021/folder_web_after.png", alt="folder_icon")
 					p#web Web
 				div#design.folder
-					img#design.icon(src="resource/imgs/folder_ux.png", alt="folder_icon")
-					img#unity.icon_after(src="resource/imgs/folder_ux_after.png", alt="folder_icon")
+					img#design.icon(src="resource/imgs/2021/folder_ux.png", alt="folder_icon")
+					img#unity.icon_after(src="resource/imgs/2021/folder_ux_after.png", alt="folder_icon")
 					p#design UX/UI
 		div.touchblock
 		div.center_animation
@@ -51,29 +51,29 @@ block content
 					div#folder_unity.folder_mid
 						- for (var i = unitycount - 1; i >= 0; i--)
 							div(id=unitylist[i], class = "folder_content")
-								img.icon(src="resource/imgs/unity/" + unitylist[i] + ".png", alt="folder_icon")
+								img.icon(src="resource/imgs/2021/unity/" + unitylist[i] + ".png", alt="folder_icon")
 								div.folder_content_mid_p
 									p(id=unitylist[i], class = "folder_content_p")=unitylist[i].substring(5)
 				- else
-						img#folder_unity.folder_empty(src="resource/imgs/empty.png", alt="empty_icon")
+						img#folder_unity.folder_empty(src="resource/imgs/2021/empty.png", alt="empty_icon")
 				- if (designcount != 0)
 					div#folder_design.folder_mid
 						- for (var i = 0; i < designcount; i++)
 							div(id=designlist[i], class = "folder_content")
-								img.icon(src="resource/imgs/folders.png", alt="folder_icon")
+								img.icon(src="resource/imgs/2021/folders.png", alt="folder_icon")
 								div.folder_content_mid_p
 									p(id=designlist[i], class = "folder_content_p")=designlist[i]
 				- else
-					img#folder_design.folder_empty(src="resource/imgs/empty.png", alt="empty_icon")
+					img#folder_design.folder_empty(src="resource/imgs/2021/empty.png", alt="empty_icon")
 				- if (webcount != 0)
 					div#folder_web.folder_mid
 						- for (var i = 0; i < webcount; i++)
 							div(id=weblist[i], class = "folder_content")
-								img.icon(src="resource/imgs/folders.png", alt="folder_icon")
+								img.icon(src="resource/imgs/2021/folders.png", alt="folder_icon")
 								div.folder_content_mid_p
 									p(id=weblist[i], class = "folder_content_p")=weblist[i]
 				- else
-					img#folder_web.folder_empty(src="resource/imgs/empty.png", alt="empty_icon")
+					img#folder_web.folder_empty(src="resource/imgs/2021/empty.png", alt="empty_icon")
 			div.folder_frame
 		div.center_popup
 			div.popup_exit

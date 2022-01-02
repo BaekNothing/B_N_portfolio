@@ -25,17 +25,9 @@ block content
 					i.icon.material-icons person
 			p.txt.mail baeknothing@gmail.com
 		div.contents
-			- for (var i = 0; i < unitycount; i++){
-				div.content(onclick="location.href ='/content?category=unity&name="+unitylist[i]+"'" style="background-image : url('resource/imgs/thumbnails/unity/"+ unitylist[i] +".png')")
-					div.content_black=unitylist[i]
-			- }
-			- for (var i = 0; i < designcount; i++){
-				div.content(onclick="location.href ='/content?category=design&name="+designlist[i]+"'" style="background-image : url('resource/imgs/thumbnails/design/"+ designlist[i] +".png')")
-					div.content_black=designlist[i]
-			- }
-			- for (var i = 0; i < webcount; i++){
-				div.content(onclick="location.href ='/content?category=web&name="+weblist[i]+"'" style="background-image : url('resource/imgs/thumbnails/web/"+ weblist[i] +".png')")
-					div.content_black=weblist[i]
+			- for (var i = 0; i < contentcount; i++){
+				div.content(onclick="location.href ='/content/"+contentlist[i]+"'" style="background-image : url('resource/imgs/thumbnails/"+ contentlist[i] +".png')")
+					div.content_black=contentlist[i]
 			- }
 		div.txt.btn.see_more more
 			div.see_more_icon
