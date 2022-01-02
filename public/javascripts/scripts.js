@@ -17,7 +17,7 @@ window.onload = function(){
     if (openflag === 1)
     {
       $('.contents').css({'width' : (window.innerWidth - 600) + 'px', 'opacity' : '1', 'transition-duration': '0s'});
-      $('.content').css({'width' : ($('.contents').css('width').slice(0,-2) / 9 * 4) + 'px'});
+      $('.content').css({'width' : getcontentWidth() + 'px'});
     }
     $('.detail_background').css({'width' : (window.innerWidth - 540) + 'px'});
   });
@@ -32,13 +32,14 @@ window.onload = function(){
       $('.contents').css({'width' : (window.innerWidth - 600) + 'px', 'opacity' : '1', 'transition-delay': '0s', 'transition-duration': '0s'});
       $('.content').css({'opacity' : '1',
                           'transition-duration': '0.4s',
-                          'transition-delay': '0.4s',
+                          'transition-delay': '0.8s',
                           'pointer-events' : 'auto',
-                          'width' : ($('.contents').css('width').slice(0,-2) / 9 * 4) + 'px'
+                          'width' : ($('.contents').css('width').slice(0,-2) / 9 * 4) + 'px',
+                          'width' : getcontentWidth() + 'px'
                          });
       openflag = 1;
     } else {
-      $('.see_more').css({'transform': 'rotate(-0turn)'});
+      $('.see_more').css({'transform': 'rotate(0turn)'});
       $('.bottom').css({ 'width' : window.innerWidth + 'px'});
       $('.contents').css({'width' : '0px', 'opacity' : '0', 'transition-delay': '0.2s', 'transition-duration': '0.3s'});
       $('.content').css({'transition-delay': '0s',
@@ -48,6 +49,15 @@ window.onload = function(){
       openflag = 0;
     }
   });
+
+  function getcontentWidth(){
+    if(window.innerWidth >= 1200)
+      return((window.innerWidth - 600) / 9 * 4);
+    else if(window.innerWidth > 800)
+      return((window.innerWidth - 600) / 9 * 8);
+    else
+      return(0);
+  }
 
   function shuffle(){
     $('.contents').each(function() {
