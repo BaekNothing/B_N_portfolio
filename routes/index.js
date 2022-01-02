@@ -9,17 +9,19 @@ router.get('/', async function(req, res, next) {
   var designlist = await readDir(dirSrc, 'design');
   var weblist = await readDir(dirSrc, 'web');
 
-  await res.render('2021_index', {
-          title: 'Baeknothing_portfolio',
-          unitycount: unitylist.length,
-          unitylist: unitylist,
+  try{
+    await res.render('2021_index', {
+            title: 'Baeknothing_portfolio',
+            unitycount: unitylist.length,
+            unitylist: unitylist,
 
-          designcount: designlist.length,
-          designlist: designlist,
+            designcount: designlist.length,
+            designlist: designlist,
 
-          webcount: weblist.length,
-          weblist: weblist
-  });
+            webcount: weblist.length,
+            weblist: weblist
+    });
+  }catch(error){console.log(error);}
 });
 
 router.get('/2022', async function(req, res, next){
