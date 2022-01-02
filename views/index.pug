@@ -7,9 +7,9 @@ block content
 				h1.btn.txt.title(href="/")
 					| BAEK. <br> NOTHING
 			p.txt.subtext
-				| 0 에서 출발해,
+				| 0 에서 출발하여,
 				br
-				| 단서와 논리를 갖고
+				| 단서와 논리를 통해
 				br
 				| 스스로 해를 찾아
 				br
@@ -25,10 +25,9 @@ block content
 					i.icon.material-icons person
 			p.txt.mail baeknothing@gmail.com
 		div.contents
-			- for (var i = 0; i < contentcount; i++){
-				div.content(onclick="location.href ='/content/"+contentlist[i]+"'" style="background-image : url('resource/imgs/thumbnails/"+ contentlist[i] +".png')")
-					div.content_black=contentlist[i]
-			- }
+			- for (var i = 0; i < contentcount; i++)
+					div.content(onclick="location.href ='/content/"+contentlist[i]+"'" style="background-image : url('resource/imgs/contents/" + contentlist[i] + "/" + contentlist[i] +".png')")
+						div.txt.content_black=contentlist[i]
 		div.txt.btn.see_more more
 			div.see_more_icon
 		div.loading

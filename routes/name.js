@@ -41,7 +41,7 @@ router.post('/', async function(req, res, next) {
 
   texts = await readfile(dirSrc, '', '/main.txt');
   textcount = texts.length;
-  await res.render('2021_contents', {
+  await res.render('2021/2021_contents', {
       content_category: req.body.category,
       content_title: req.body.name,
       content_subtitle: 'subtitle',

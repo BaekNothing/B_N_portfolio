@@ -2,32 +2,45 @@ window.onload = function(){
   $(document).ready(function(){
     var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
     $('.loading').hide();
+    $('.detail_background').css({'width' : (window.innerWidth - 540) + 'px'});
+
     if (isMobile)
     {
       $('.see_more').hide();
       $('.contents').hide();
     }
   });
+
   let openflag = 0;
+
+  $(window).resize(function(){
+    if (openflag === 1)
+    {
+      $('.contents').css({'width' : (window.innerWidth - 600) + 'px', 'opacity' : '1', 'transition-duration': '0s'});
+      $('.content').css({'width' : ($('.contents').css('width').slice(0,-2) / 9 * 4) + 'px'});
+    }
+    $('.detail_background').css({'width' : (window.innerWidth - 540) + 'px'});
+  });
+
+  var contentWidth = window.innerWidth - 600;
 
   $('.see_more').on('click', function(){
     if (openflag === 0){
       shuffle();
       $('.see_more').css({'transform': 'rotate(0.499turn)'});
       $('.bottom').css({'width' : '480px'});
-      $('.contents').css({'width' : (window.innerWidth - 692) + 'px', 'opacity' : '1', 'transition-duration': '0s'});
+      $('.contents').css({'width' : (window.innerWidth - 600) + 'px', 'opacity' : '1', 'transition-delay': '0s', 'transition-duration': '0s'});
       $('.content').css({'opacity' : '1',
                           'transition-duration': '0.4s',
                           'transition-delay': '0.4s',
                           'pointer-events' : 'auto',
-                          'width' : ($('.contents').css('width').slice(0,-2) / 7 * 3) + 'px'
+                          'width' : ($('.contents').css('width').slice(0,-2) / 9 * 4) + 'px'
                          });
       openflag = 1;
-    }
-    else {
+    } else {
       $('.see_more').css({'transform': 'rotate(-0turn)'});
       $('.bottom').css({ 'width' : window.innerWidth + 'px'});
-      $('.contents').css({'width' : '0px', 'opacity' : '0', 'transition-duration': '0.3s'});
+      $('.contents').css({'width' : '0px', 'opacity' : '0', 'transition-delay': '0.2s', 'transition-duration': '0.3s'});
       $('.content').css({'transition-delay': '0s',
                          'transition-duration': '0.1s',
                          'pointer-events' : 'none',

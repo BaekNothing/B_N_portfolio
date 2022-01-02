@@ -10,7 +10,7 @@ router.get('/', async function(req, res, next) {
   var weblist = await readDir(dirSrc, 'web');
 
   try{
-    await res.render('2021_index', {
+    await res.render('2021/2021_index', {
             title: 'Baeknothing_portfolio',
             unitycount: unitylist.length,
             unitylist: unitylist,
@@ -25,7 +25,7 @@ router.get('/', async function(req, res, next) {
 });
 
 router.get('/2022', async function(req, res, next){
-  var dirSrc = './public/resource/contents';
+  var dirSrc = './public/resource/imgs/contents';
   var contentlist;
 
   contentlist = await readDir(dirSrc, '');

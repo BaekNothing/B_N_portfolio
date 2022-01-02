@@ -4,17 +4,23 @@ block content
   body
     div.introduce
       a(href="/")
-        h1.btn.txt.title(href="/")=content_title
-      p.txt.subtext=texts
-    div.introduce.bottom
-      div.icons
-        a.btn.icon.fa.fa-instagram(href="https://www.instagram.com/baek.nothing/?hl=ko")
-        a.btn.fa(href="/introduce")
-          i.icon.material-icons person
-      p.txt.mail baeknothing@gmail.com
-    div.contents
-      - var ic = vc = uc = 0;
-      
-      
+        h1.btn.txt.title(href="/")
+          | Empty Page
+          br
+          br
+          br
+          br
+      p.txt.subtext
+        | 이곳은 빈 페이지 입니다.
+        br
+        | 의도적으로 들어온게 아니라면
+        br
+        | baeknothing@gmail.com으로 
+        br
+        | 상황을 알려주세요.
+    div.detail_background
+      div.detail_div
+        p.txt.detail_listhead
+        p.txt 
     div.loading
-      img.loading-image(src="resource/imgs/rocket.gif", alt="loading")
+      img.loading-image(src="/resource/imgs/rocket.gif", alt="loading")
