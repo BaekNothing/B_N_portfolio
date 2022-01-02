@@ -45,7 +45,7 @@ div.contents_textArea
 //img Area
 - if(content_imglist.length > 0)
   div.mov_gap
-  - if(!isMobile)
+  - if(!isMobile && content_imglist[0] != 'null.txt')
     image.contents_img(src="resource/2021/" + content_category + "/" + content_title + "/img/" + content_imglist[0], alt="contents_img")
     - for(var i = 1; i < content_imgs; i++)
       image.contents_img(src="resource/2021/" + content_category + "/" + content_title + "/img/" + content_imglist[i], alt="contents_img", style="visibility: hidden; margin:0px; height:0px;")
