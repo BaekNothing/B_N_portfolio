@@ -21,13 +21,14 @@ block content
 		div.introduce.bottom
 			div.icons
 				a.btn.icon.fa.fa-instagram(href="https://www.instagram.com/baek.nothing/?hl=ko")
-				a.btn.fa(href="/introduce")
+				a.btn.fa(href="/users")
 					i.icon.material-icons person
 			p.txt.mail baeknothing@gmail.com
 		div.contents
-			- for (var i = 0; i < contentcount; i++)
-					div.content(onclick="location.href ='/content/"+contentlist[i]+"'" style="background-image : url('resource/imgs/contents/" + contentlist[i] + "/" + contentlist[i] +".png')")
-						div.txt.content_black=contentlist[i]
+			div.content_scroll
+				- for (var i = 0; i < contentcount; i++)
+						div.content(onclick="location.href ='/content/"+contentlist[i]+"'" style="background-image : url('resource/imgs/contents/" + contentlist[i] + "/" + contentlist[i] +".png')")
+							div.txt.content_black=contentlist[i]
 		div.txt.btn.see_more more
 			div.see_more_icon
 		div.loading

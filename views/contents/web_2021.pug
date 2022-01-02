@@ -5,16 +5,63 @@ block content
     div.introduce
       a(href="/")
         h1.btn.txt.title(href="/")
-          | FacePlay
+          | portfolio_web
           br
           | 2020
-      p.txt.subtext testsubtext
+      p.txt.subtext
+        strong 작업기간 : 
+        | <br> 2021.04, 2021.12 (2개월) <br> 
+        strong 작업인원 : 
+        | <br> 1명 (디자인, 기획, 개발) <br> 
+        strong 프레임워크 : 
+        | <br> Node.js(express) 
     div.detail_background
       div.detail_div
-        p.txt.detail_listhead 1.intro
-        p.txt 
-          | this is intro dfaljksfjwfjpowjfpqfqfㅁ이라ㅓㄹ베레ㅓ레ㅔㅓㅔㅓㅔㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓ
-          br
-          | testoperatior
+        p.txt.detail_listhead 1. 개요
+        p.txt.detail_txt
+          strong 졸업 후 작업물들을 저장하기 위해 제작한 포트폴리오 웹 사이트, 
+          | 4월 5일 부터 11일까지 집중적으로 작업했고, 작업하던 도중 좋은 제안이 들어와 팀으로 일하게 되면서 이 프로젝트는 잠시 중단되었다.
+          | 이후 12월에 일이 정리된 뒤, 12월 11일까지 남은 부분을 정리하였다.
+        p.txt.detail_txt
+          | 그러다 12월 말 경, 동료로부터 조금 더 디자인이 정돈되었으면 좋겠다는 피드백을 받았고.. 마침 폴더형 구조를 정리할 때, 각 요소들을 불러오는 부분들이 아쉽다고 생각하고 있었기 때문에
+          | 새로 웹페이지를 리뉴얼하게 되면서 만들었던 현재의 페이지는 레거시형태로 보존해 두기로 했다.
+        p.txt.detail_txt
+          | 현재는 "https://www.baeknothing/2021"에서 확인할 수 있다. 
+      div.detail_div
+        img.detail_img(src="/resource/imgs/contents/web_2021/web_2021.png", alt="detail")
+      div.detail_div
+        p.txt.detail_listhead 2. 폴더형 웹사이트
+        p.txt.detail_txt
+          | 웹사이트의 컨셉은 데스크탑에서 폴더를 열어서 파일을 보듯, 디테일한 정보를 페이지 이동 없이 보여줄 수 있는 #[strong 폴더형 웹사이트]로 결정했었다.
+          | 각 컨텐츠 상세페이지 너비는 480px으로 정했는데, 하나의 레이아웃을 데스크탑과 모바일 양쪽에 동일하게 적용할 수 있었기 때문이다. <br> <br>
+      div.detail_div
+        img.detail_img(src="/resource/imgs/contents/web_2021/web_folders.gif", alt="detail")
+      div.detail_div
+        p.txt.detail_listhead 3. Ajax를 이용한 렌더링
+        p.txt.detail_txt
+          | 폴더형 웹사이트 구현을 위해 Ajax를 사용하여 대상페이지를 현재의 상세페이지 레이아웃에 로드했다.
+          | 각 컨텐츠를 로드할 때는 async await을 이용해 이미지, 유튜브, 깃허브, 유니티링크 들이 순차적으로 확실하게 실행될 수 있도록 최대한 보장하고자 했다.
+        p.txt.detail_txt
+          | 한가지 아쉬웠던 것은, 이미지가 없을때, 첨부할만한 깃허브 링크 등이 없을때 등에 대응하기 위해 예외상황들을 뒤늦게 하나하나 추가하면서 점점 구조가 복잡해졌는데,
+          | 처음부터 이런 예외상황을 고려해 불러오는 구조를 만들었다면 더 좋지 않았을까 하는 아쉬움이 남는다. <br> <br>
+      div.detail_div
+        img.detail_img(src="/resource/imgs/contents/web_2021/web_folder.gif", alt="detail")
+      div.detail_div
+        img.detail_img(src="/resource/imgs/contents/web_2021/web_git.gif", alt="detail")
+      div.detail_div
+        p.txt.detail_listhead 4. 기타 컨텐츠
+        p.txt.detail_txt
+          | p5.js를 이용해 클릭 이벤트를 넣거나, css animation을 이용해 폴더가 움직이는 등 간단한 이벤트도 넣었었다. 
+          | 장난스러운 의도와 짧은 기간에 비해 생각보다 반응이 좋았어서 만족스러웠다. <br> <br>
+      div.detail_div
+        img.detail_img(src="/resource/imgs/contents/web_2021/web_p5.gif", alt="detail")
+      div.detail_div
+        img.detail_img(src="/resource/imgs/contents/web_2021/web_dance.gif", alt="detail")
+      div.detail_div
+        br
+        br 
+        br
+        br
+        br
     div.loading
       img.loading-image(src="/resource/imgs/rocket.gif", alt="loading")
