@@ -1,7 +1,7 @@
 :root{
 	--sns-icon-size	: 44px;
 
-	--line-height		: 40px;
+	--line-height		: 42px;
 	--spacing				: 40px;
 	--spacing-twice	: 80px;
 
@@ -317,10 +317,12 @@ a{
 }
 
 .detail_txt{
-	margin-top			: 12px;
+	margin-top			: 8px;
 
 	max-width				: 1000px;
 	height					: auto;
+
+	font-size				: 22px;
 }
 
 .detail_img{
