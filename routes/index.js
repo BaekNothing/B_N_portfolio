@@ -3,7 +3,7 @@ var router = express.Router();
 var fs = require('fs');
 
 /* GET home page. */
-router.get('/', async function(req, res, next) {
+router.get('/2021', async function(req, res, next) {
   var dirSrc = './public/resource/2021/';
   var unitylist = await readDir(dirSrc, 'unity');
   var designlist = await readDir(dirSrc, 'design');
@@ -24,7 +24,7 @@ router.get('/', async function(req, res, next) {
   }catch(error){console.log(error);}
 });
 
-router.get('/2022', async function(req, res, next){
+router.get('/', async function(req, res, next){
   var dirSrc = './public/resource/imgs/contents';
   var contentlist;
 

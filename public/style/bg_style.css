@@ -61,6 +61,7 @@ body{
 										rgba(83, 83, 83, 0.2) 0%,
 										rgba(255, 255, 255, 0) 19.87%
 										), #FFFFFF;
+	word-break			: keep-all;
 }
 
 a{
@@ -68,7 +69,7 @@ a{
 }
 
 .txt{
-	word-break			:break-all;
+	/* word-break			: break-word; */
 	font-family			: 'Noto_Sans-Thin';
 	color						: var(--text-color);
 	letter-spacing 	: -0.1px;
@@ -129,6 +130,8 @@ a{
 	position				: absolute;
 	right						: var(--spacing);
 	bottom					: var(--spacing-twice);
+
+	z-index					: 2; 
 
 	height 					: 80px;
 	width 					: auto;
