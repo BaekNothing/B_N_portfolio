@@ -6,10 +6,34 @@
   	--spacing				: 40px;
   	--spacing-twice	: 80px;
 
-  	--title-size 		: 52px;
+  	--title-size 		: 50px;
   	--font-size 		: 20px;
   	--text-color		: #5F6368;
 
   	--ani-duration : 1.3s;
   }
+
+
+  .title{
+  	width 					: 400px;
+  	font-family			: 'Noto_Sans-Light';
+  	/* font-family			: 'Noto_Sans-Thin'; */
+  	letter-spacing	: 1.2px;
+  	color 					: #535353;
+  	font-size 			: var(--title-size);
+  	font-weight			: 400;
+  	line-height			: 60px !important;
+
+  	margin-top			: var(--spacing);
+  	margin-left			: var(--spacing);
+  }
+
+  .subtext{
+  	margin-top			: 28px;
+  	margin-left			: var(--spacing);
+  	padding-left		: 6px;
+  	font-size				: 24px;
+  	line-height			: 40px;
+  }
+
 }
