@@ -131,7 +131,7 @@ a{
 	right						: var(--spacing);
 	bottom					: var(--spacing-twice);
 
-	z-index					: 2; 
+	z-index					: 2;
 
 	height 					: 80px;
 	width 					: auto;
@@ -322,7 +322,7 @@ a{
 .detail_txt{
 	margin-top			: 8px;
 
-	max-width				: 1000px;
+	max-width				: 980px;
 	height					: auto;
 
 	font-size				: 22px;
