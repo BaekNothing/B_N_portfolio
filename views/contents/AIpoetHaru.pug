@@ -1,0 +1,55 @@
+extend ../layout.pug
+
+block content
+  body
+    div.introduce
+      a(href="/")
+        h1.btn.txt.title(href="/")
+          | AIpoetHaru
+          br
+          | 2021.06 ~ 2021.12
+      p.txt.subtext
+        br
+        strong 작업기간 : 
+        | <br> 2019.12 ~ 2020.3 <br> 
+        strong 작업인원 : 
+        | <br> 7명 (유니티 및 서버 개발자로 참여) <br> 
+        strong 프레임워크 : 
+        | <br> unity, node.js(express)
+        strong api :
+        | <br> gpt-3, yolo, papago
+    div.detail_background
+      div.detail_div
+        p.txt.detail_listhead 1. 개요
+        p.txt 
+          | 21년 6월 경 아트앤테크 활성화 창작지원 사업에 선정된 팀에서 유니티 개발자 포지션 제안을 받아 참여하게된 프로젝트,
+          | ai와 시를 이용해 사람이 창작하는 과정을 모사하는 프로젝트였으며, 
+          | 참여 당시 기획은 거의 완성되어 있었기 때문에 개발에 전념할 수 있었다.
+          br
+      div.detail_div
+        p.txt.detail_listhead 2. AI 연구
+        p.txt
+          | Jetson nano를 이용해 자연어 학습을 진행할 예정이었으나, 기본 환경 세팅 문제 등을 겪으며 난항에 빠졌다.
+          | 특히 torch따위를 설치할 때 cuda등의 버젼이 계속 말썽을 일으켰는데, 결국 적절한 os버젼을 찾지 못해서
+          | gpt-3 api를 사용하기로 했다. 
+        p.txt
+          | 초기 기획에서는 유니티 내에서 머신러닝 에이젼트를 이용해 오브젝트를 컨트롤하고자 했는데. 
+          | 학습을 진행하면서, 우리가 현재 구성하고 있는 단순한 환경에서 이렇게 학습된 오브젝트가
+          | 패스파인딩 알고리즘보다 무엇이 다른것인가? 하는 회의감을 느꼈고. 토의를 통해 거리를 기반으로한 단순한 추적으로 대체하였다.
+        p.txt
+          | 개발을 진행하면서, 
+      div.detail_div
+        p.txt.detail_listhead 3. 서버 개발
+        p.txt
+      div.detail_div
+        p.txt.detail_listhead 4. WebGl 개발
+        p.txt
+      
+      div.detail_div
+        br
+        br
+        br
+        br
+        br
+    div.loading
+      img.loading-image(src="/resource/imgs/rocket.gif", alt="loading")
