@@ -1,6 +1,15 @@
 @media screen and (max-width: 479px) {
+  :root{
+  	--sns-icon-size	: 44px;
 
-  /* bg_style  */
-  
+  	--line-height		: 40px;
+  	--spacing				: 40px;
+  	--spacing-twice	: 80px;
 
+  	--title-size 		: 52px;
+  	--font-size 		: 20px;
+  	--text-color		: #5F6368;
+
+  	--ani-duration : 1.3s;
+  }
 }
