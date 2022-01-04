@@ -26,7 +26,6 @@
     "fsevents": "*"
   },
   "devDependencies": {
-    "mocha-jsdom": "^2.0.0",
-    "shelljs": "^0.8.4"
+    "mocha-jsdom": "^2.0.0"
   }
 }

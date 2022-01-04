@@ -18,7 +18,6 @@ block content
 			div.p5_screen
 			div#complapins.trash.dragblock(onclick="location.href='http://www.kartsdesign.net/portfolio/hinder/';")
 				img.icon(src="resource/imgs/2021/folder_seniorproject.png", alt="trash_icon")
-				img.icon_after(src="resource/imgs/2021/folder_seniorproject_after.png", alt="trash_icon")
 				p : Hinder : Senior Project
 			div.infocard.dragblock
 				p.infotext BAEK_NOTHING
@@ -28,15 +27,12 @@ block content
 			div.folders.dragblock
 				div#unity.folder
 					img#unity.icon(src="resource/imgs/2021/folder_unity.png", alt="folder_icon")
-					img#unity.icon_after(src="resource/imgs/2021/folder_unity_after.png", alt="folder_icon")
 					p#unity Unity
 				div#web.folder
 					img#web.icon(src="resource/imgs/2021/folder_web.png", alt="folder_icon")
-					img#unity.icon_after(src="resource/imgs/2021/folder_web_after.png", alt="folder_icon")
 					p#web Web
 				div#design.folder
 					img#design.icon(src="resource/imgs/2021/folder_ux.png", alt="folder_icon")
-					img#unity.icon_after(src="resource/imgs/2021/folder_ux_after.png", alt="folder_icon")
 					p#design UX/UI
 		div.touchblock
 		div.center_animation
@@ -47,33 +43,49 @@ block content
 		div.folder_popup
 			div.folder_exit
 			div.folder_contents
-				- if (unitycount != 0)
-					div#folder_unity.folder_mid
-						- for (var i = unitycount - 1; i >= 0; i--)
-							div(id=unitylist[i], class = "folder_content")
-								img.icon(src="resource/imgs/2021/unity/" + unitylist[i] + ".png", alt="folder_icon")
-								div.folder_content_mid_p
-									p(id=unitylist[i], class = "folder_content_p")=unitylist[i].substring(5)
-				- else
-						img#folder_unity.folder_empty(src="resource/imgs/2021/empty.png", alt="empty_icon")
-				- if (designcount != 0)
-					div#folder_design.folder_mid
-						- for (var i = 0; i < designcount; i++)
-							div(id=designlist[i], class = "folder_content")
-								img.icon(src="resource/imgs/2021/folders.png", alt="folder_icon")
-								div.folder_content_mid_p
-									p(id=designlist[i], class = "folder_content_p")=designlist[i]
-				- else
-					img#folder_design.folder_empty(src="resource/imgs/2021/empty.png", alt="empty_icon")
-				- if (webcount != 0)
-					div#folder_web.folder_mid
-						- for (var i = 0; i < webcount; i++)
-							div(id=weblist[i], class = "folder_content")
-								img.icon(src="resource/imgs/2021/folders.png", alt="folder_icon")
-								div.folder_content_mid_p
-									p(id=weblist[i], class = "folder_content_p")=weblist[i]
-				- else
-					img#folder_web.folder_empty(src="resource/imgs/2021/empty.png", alt="empty_icon")
+				div#folder_unity.folder_mid
+					div(id="2021_AIpoet_haru", class = "folder_content")
+						img.icon(src="resource/imgs/2021/unity/2021_AIpoet_haru.png", alt="folder_icon")
+						div.folder_content_mid_p
+							p(id="2021_AIpoet_haru", class = "folder_content_p") AIpoet_haru
+					div(id="2020_FacePlay", class = "folder_content")
+						img.icon(src="resource/imgs/2021/unity/2020_FacePlay.png", alt="folder_icon")
+						div.folder_content_mid_p
+							p(id="2020_FacePlay", class = "folder_content_p") FacePlay
+					div(id="2020_VR_research", class = "folder_content")
+						img.icon(src="resource/imgs/2021/unity/2020_VR_research.png", alt="folder_icon")
+						div.folder_content_mid_p
+							p(id="2020_VR_research", class = "folder_content_p") VR_research
+					div(id="2020_달팽이키우기", class = "folder_content")
+						img.icon(src="resource/imgs/2021/unity/2020_달팽이키우기.png", alt="folder_icon")
+						div.folder_content_mid_p
+							p(id="2020_달팽이키우기", class = "folder_content_p") 달팽이키우기
+					div(id="2019_DA_19", class = "folder_content")
+						img.icon(src="resource/imgs/2021/unity/2019_DA_19.png", alt="folder_icon")
+						div.folder_content_mid_p
+							p(id=unitylist[i], class = "folder_content_p") DA_19
+					div(id="2018_DA_18", class = "folder_content")
+						img.icon(src="resource/imgs/2021/unity/2018_DA_18.png", alt="folder_icon")
+						div.folder_content_mid_p
+							p(id=unitylist[i], class = "folder_content_p") DA_18
+					div(id="2017_DA_17", class = "folder_content")
+						img.icon(src="resource/imgs/2021/unity/2017_DA_17.png", alt="folder_icon")
+						div.folder_content_mid_p
+							p(id=unitylist[i], class = "folder_content_p") DA_17								
+					div(id="2016_DA_16", class = "folder_content")
+						img.icon(src="resource/imgs/2021/unity/2016_DA_16.png", alt="folder_icon")
+						div.folder_content_mid_p
+							p(id="2016_DA_16", class = "folder_content_p") DA_16
+					div(id="2015_Dolphinflow", class = "folder_content")
+						img.icon(src="resource/imgs/2021/unity/2015_Dolphinflow.png", alt="folder_icon")
+						div.folder_content_mid_p
+							p(id="2015_Dolphinflow", class = "folder_content_p") Dolphilnflow
+				img#folder_design.folder_empty(src="resource/imgs/2021/empty.png", alt="empty_icon")
+				div#folder_web.folder_mid
+					div(id=complapins, class = "folder_content")
+						img.icon(src="resource/imgs/2021/folders.png", alt="folder_icon")
+						div.folder_content_mid_p
+							p(id=complapins, class = "folder_content_p") complapins
 			div.folder_frame
 		div.center_popup
 			div.popup_exit

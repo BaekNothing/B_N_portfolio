@@ -26,9 +26,14 @@ block content
 			p.txt.mail baeknothing@gmail.com
 		div.contents
 			div.content_scroll
-				- for (var i = 0; i < contentcount; i++)
-						div.content(onclick="location.href ='/content/"+contentlist[i]+"'" style="background-image : url('resource/imgs/contents/" + contentlist[i] + "/" + contentlist[i] +".png')")
-							div.txt.content_black=contentlist[i]
+					div.content(onclick="location.href ='/content/AIpoetHaru'" style="background-image : url('resource/imgs/contents/AIpoetHaru/AIpoetHaru.png')")
+							div.txt.content_black AIpoetHaru
+					div.content(onclick="location.href ='/content/web_2021'" style="background-image : url('resource/imgs/contents/web_2021/web_2021.png')")
+							div.txt.content_black web_2021
+					div.content(onclick="location.href ='/content/FacePlay'" style="background-image : url('resource/imgs/contents/FacePlay/FacePlay.png')")
+							div.txt.content_black FacePlay
+					div.content(onclick="location.href ='/content/달팽이키우기'" style="background-image : url('resource/imgs/contents/달팽이키우기/달팽이키우기.png')")
+							div.txt.content_black 달팽이키우기
 		div.txt.btn.see_more more
 			div.see_more_icon
 		div.loading
