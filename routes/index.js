@@ -25,17 +25,24 @@ router.get('/2021', async function(req, res, next) {
 });
 
 router.get('/', async function(req, res, next){
-  var dirSrc = './public/resource/imgs/contents';
-  var contentlist;
+  res.render('closed', {
+     title : 'Baeknothing_portfolio'
+  })
+})
 
-  contentlist = await readDir(dirSrc, '');
-  console.log(contentlist);
-  await res.render('index', {
-    title : 'Baeknothing_portfolio',
-    contentcount: contentlist.length,
-    contentlist: contentlist
-  });
-});
+//
+// router.get('/', async function(req, res, next){
+//   var dirSrc = './public/resource/imgs/contents';
+//   var contentlist;
+//
+//   contentlist = await readDir(dirSrc, '');
+//   console.log(contentlist);
+//   await res.render('index', {
+//     title : 'Baeknothing_portfolio',
+//     contentcount: contentlist.length,
+//     contentlist: contentlist
+//   });
+// });
 
 async function readDir(path, name){
   try{
